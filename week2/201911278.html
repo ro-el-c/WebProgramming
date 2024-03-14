@@ -7,20 +7,77 @@
   <div id="page-wrapper">
     <!--Header-->
     <header id="main-header">
+      <h1 class="master-title">웹 프로그래밍 완전 정복</h1>
+      <h2 class="master-description">건국대학교 컴퓨터공학부</h2>
     </header>
 
     <!--Navigation Bar-->
     <nav id="main-navigation">
+      <div class="pull-left">
+        <ul class="outer-menu">
+          <li class="outer-menu-item">HTML5</li>
+          <li class="outer-menu-item">CSS3</li>
+          <li class="outer-menu-item">PHP</li>
+        </ul>
+      </div>
+      <div class="pull-right">
+        <form>
+          <input type="text" class="input-search">
+          <input type="submit" class="input-search-submit" value="검색">
+        </form>
+      </div>
     </nav>
 
     <!--Main Content-->
     <div id="content">
-      <section id="main-section"></section>
-      <section id="main-aside"></section>
+      <section id="main-section">
+        <article>
+          <div class="article-header">
+            <h1 class="article-title">HTML란 무엇인가?</h1>
+            <p class="article-date">2024년 3월 14일</p>
+          </div>
+          <div class="article-body">
+            <img src="https://via.placeholder.com/430x280" alt="placeholder image">
+            <p>HTML(HyperText Markup Language)은 웹을 이루는 가장 기초적인 구성 요소로, 웹 콘텐츠의 의미와 구조를 정의할 때 사용합니다. HTML 이외의 다른 기술은 일반적으로 웹 페이지의 모양/표현 (CSS), 또는 기능/동작 (JavaScript)을 설명하는 데 사용됩니다.</p>
+          </div>
+        </article>
+        <article>
+          <div class="article-header">
+            <h1 class="article-title">CSS란 무엇인가?</h1>
+            <p class="article-date">2024년 3월 14일</p>
+          </div>
+          <div class="article-body">
+            <img src="https://via.placeholder.com/430x280" alt="placeholder image">
+            <p>Cascading Style Sheets(CSS)는 HTML이나 XML(XML의 방언인 SVG, XHTML 포함)로 작성된 문서의 표시 방법을 기술하기 위한 스타일 시트 언어입니다. CSS는 요소가 화면, 종이, 음성이나 다른 매체 상에 어떻게 렌더링되어야 하는지 지정합니다.</p>
+          </div>
+        </article>
+      </section>
+      <section id="main-aside">
+        <div class="aside-list">
+          <h3 class="category">카테고리</h3>
+          <ul>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">React</a></li>
+            <li><a href="#">else</a></li>
+          </ul>
+        </div>
+        <div class="aside-list">
+          <h3 class="latest-article">최근 글</h3>
+          <ul>
+            <li><a href="#">HTML란 무엇인가?</a></li>
+            <li><a href="#">CSS란 무엇인가?</a></li>
+            <li><a href="#">JavaScript란 무엇인가?</a></li>
+            <li><a href="#">React란 무엇이고, 언제 쓰이는가?</a></li>
+          </ul>
+        </div>
+      </section>
     </div>
     
     <!--Footer-->
     <footer id="main-footer">
+      <a href="#">Created By GyeongEun Chung</a>
     </footer>
   </div>
 </body>
