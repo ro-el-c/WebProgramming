@@ -5,6 +5,8 @@
   <style>
     * {
       font-family: '맑은 고딕', Gothic, sans-serif;
+      margin: 0;
+      padding: 0;
     }
     a {
       text-decoration: none;
@@ -14,9 +16,25 @@
     }
     body {
       background-color: #E6E6E6;
+      width: 960px;
+      margin: 0 auto;
+    }
+    article {
+      padding: 0 10px 20px 10px;
+      border-bottom: 1px solid #C9C9C9;
     }
     #page-wrapper {
       background-color: white;
+      margin-top: 40px;
+      padding: 10px 20px;
+    }
+    #main-header {
+      padding: 40px 50px;
+    }
+    #main-navigation {
+      margin-bottom: 20px;
+      border-top: 1px solid #C9C9C9;
+      border-bottom: 1px solid #C9C9C9;
     }
     .master-title {
       font-size: 30px;
@@ -26,8 +44,30 @@
       font-size: 15px;
       color: #383838;
     }
+    .pull-right {
+      height: 26px;
+      padding: 7px;
+    }
+    .input-search {
+      display: block;
+      height: 24px;
+      width: 120px;
+      padding-left: 10px;
+      border: 1px solid #CCCCCC;
+      border-radius: 15px 0 0 15px;
+    }
+    .input-search-submit {
+      display: block;
+      height: 26px;
+      width: 50px;
+      border: 1px solid #CCCCCC;
+      border-radius: 0 15px 15px 0;
+    }
     .article-title {
       font-size: 25px;
+    }
+    .article-header {
+      padding: 20px 0;
     }
     .article-date {
       font-size: 13px;
@@ -43,11 +83,21 @@
       font-size: 15px;
       color: blue;
     }
+    .outer-menu-item {
+      display: block;
+      height: 30px;
+      width: 80px;
+      line-height: 30px;
+      padding: 5px 20px;
+      text-align: center;
+    }
     .outer-menu-item:hover {
-      color: red;
+      background-color: black;
+      color: white;
     }
     .input-search:focus {
       background-color: yellow;
+      outline: 0;
     }
   </style>
 </head>
