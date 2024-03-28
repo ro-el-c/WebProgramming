@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Times New Foman', serif;
+        width: 960px;
+        margin: 0 auto;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      img {
+        border: 0;
+      }
+      #main-header {
+        width: 960px;
+        height: 160px;
+        margin: 0 auto; /* 헤더 영역의 너비가 body 너비보다 작은 경우를 대비 */
+        position: relative;
+      }
+      #main-header > #title {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+      }
+      #main-header > nav {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      #title {
+        font-family: "Amatic SC", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      nav > ul {
+        overflow: hidden;
+      }
+      nav > ul > li {
+        float: left;
+      }
+      nav > ul > li  > a {
+        display: block;
+        width: 100px;
+        height: 20px;
+        padding: 10px;
+        text-align: center;
+        line-height: 20px;
+        border: 1px solid blue;
+      }
+      nav > ul > li > a:hover {
+        background-color: black;
+        color: white;
+      }
+      nav > ul > li:first-child > a {
+        border-radius: 15px 0 0 15px;
+      }
+      nav > ul > li:last-child > a {
+        border-radius: 0 15px 15px 0;
+      }
+
+      #content {
+        width: 960px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      section {
+        width: 720px;
+        float: left;
+      }
+      #fbox {
+        width: 300px;
+        height: 200px;
+        background-color: red;
+        margin-top: 120px;
+        position: fixed;
+        left: 30%;
+        top: 20%;
+      }
+
+      aside {
+        width: 230px;
+        float: right;
+      }
+      input:nth-of-type(1) {
+        display: none;
+      }
+      input:nth-of-type(1) ~ div:nth-of-type(1) {
+        display: none;
+      }
+      input:nth-of-type(1):checked ~ div:nth-of-type(1) {
+        display: block;
+      }
+      input:nth-of-type(1):checked ~ section.tab-title > label:nth-of-type(1) {
+        background: white;
+        color: black;
+      }
+
+      input:nth-of-type(2) {
+        display: none;
+      }
+      input:nth-of-type(2) ~ div:nth-of-type(2) {
+        display: none;
+      }
+      input:nth-of-type(2):checked ~ div:nth-of-type(2) {
+        display: block;
+      }
+      input:nth-of-type(2):checked ~ section.tab-title > label:nth-of-type(2) {
+        background: white;
+        color: black;
+      }
+
+      section.tab-title {
+        overflow: hidden;
+      }
+      section.tab-title > label {
+        display: block;
+        float: left;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid black;
+        background: black;
+        color: white;
+      }
+
+      .item {
+        overflow: hidden;
+        width: 182px;
+        padding: 10px;
+        border: 1px solid black;
+        border-top: none;
+      }
+      .thumbnail {
+        float: left;
+      }
+      .description {
+        float: left;
+        margin-left: 10px;
+      }
+      .description > strong {
+        display: block;
+        width: 120px;
+        /* 한 줄을 넘어가는 텍스트에 대하여 ... 표시 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+    </style>
+    <title>Layout</title>
+  </head>
+
+  <body>
+    <!-- 헤더 -->
+    <header id="main-header">
+      <div id="title">
+        <h1>Weekly Hot Issues</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">영화</a></li>
+          <li><a href="#">드라마</a></li>
+          <li><a href="#">TV 예능</a></li>
+          <li><a href="#">다큐멘터리</a></li>
+          <li><a href="#">뉴스</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <div id="content">
+      <section>
+        <div id="fbox"></div>
+      </section>
+      <aside>
+        <input type="radio" id="song" name="tab" checked="checked">
+        <input type="radio" id="movie" name="tab">
+        <section class="tab-title">
+          <label for="song">Song Top 5</label>
+          <label for="movie">Movie Top 5</label>
+        </section>
+        <div class="tab-item">
+          <ul>
+            <li class="item">
+              <a href="#">
+                <div class="thumbnail">
+                  <img src="https://placehold.it/45x45" alt="thumbnail">
+                </div>
+                <div class="description">
+                  <strong>한 페이지가 될 수 있게</strong>
+                </div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <div class="thumbnail">
+                  <img src="https://placehold.it/45x45" alt="thumbnail">
+                </div>
+                <div class="description">
+                  <strong>We Don't Talk Anymore</strong>
+                </div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <div class="thumbnail">
+                  <img src="https://placehold.it/45x45" alt="thumbnail">
+                </div>
+                <div class="description">
+                  <strong>To. X</strong>
+                </div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <div class="thumbnail">
+                  <img src="https://placehold.it/45x45" alt="thumbnail">
+                </div>
+                <div class="description">
+                  <strong>MANIAC</strong>
+                </div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <div class="thumbnail">
+                  <img src="https://placehold.it/45x45" alt="thumbnail">
+                </div>
+                <div class="description">
+                  <strong>내가 너를 사랑하지 않는다는 것은 망할 너의 친구들의 아이디어 같아</strong>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-item">
+          <ul>
+            <li class="item">
+              <a href="#">
+                <div class="thumbnail">
+                  <img src="https://placehold.it/45x45" alt="thumbnail">
+                </div>
+                <div class="description">
+                  <strong>스파이더맨</strong>
+                </div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <div class="thumbnail">
+                  <img src="https://placehold.it/45x45" alt="thumbnail">
+                </div>
+                <div class="description">
+                  <strong>찰리와 초콜릿 공장</strong>
+                </div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <div class="thumbnail">
+                  <img src="https://placehold.it/45x45" alt="thumbnail">
+                </div>
+                <div class="description">
+                  <strong>해리포터와 아즈카반의 죄수</strong>
+                </div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <div class="thumbnail">
+                  <img src="https://placehold.it/45x45" alt="thumbnail">
+                </div>
+                <div class="description">
+                  <strong>미녀와 야수</strong>
+                </div>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <div class="thumbnail">
+                  <img src="https://placehold.it/45x45" alt="thumbnail">
+                </div>
+                <div class="description">
+                  <strong>알라딘</strong>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>footer</footer>
+    
+  </body>
+</html>
