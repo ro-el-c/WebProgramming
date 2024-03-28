@@ -23,6 +23,9 @@
       padding: 0 10px 20px 10px;
       border-bottom: 1px solid #C9C9C9;
     }
+    #content {
+      overflow: hidden;
+    }
     #page-wrapper {
       background-color: white;
       margin-top: 40px;
@@ -35,7 +38,18 @@
       margin-bottom: 20px;
       border-top: 1px solid #C9C9C9;
       border-bottom: 1px solid #C9C9C9;
+      height: 40px;
+      overflow: hidden;
     }
+    #main-section {
+      width: 710px;
+      float: left;
+    }
+    #main-aside {
+      width: 200px;
+      float: right;
+    }
+
     .master-title {
       font-size: 30px;
       color: #191919;
@@ -44,9 +58,16 @@
       font-size: 15px;
       color: #383838;
     }
+
+    .pull-left {
+      height: 40px;
+      float: left;
+    }
     .pull-right {
       height: 26px;
       padding: 7px;
+      float: right;
+      overflow: hidden;
     }
     .input-search {
       display: block;
@@ -55,6 +76,11 @@
       padding-left: 10px;
       border: 1px solid #CCCCCC;
       border-radius: 15px 0 0 15px;
+      float: left;
+    }
+    .input-search:focus {
+      background-color: yellow;
+      outline: none;
     }
     .input-search-submit {
       display: block;
@@ -62,7 +88,9 @@
       width: 50px;
       border: 1px solid #CCCCCC;
       border-radius: 0 15px 15px 0;
+      float: right;
     }
+
     .article-title {
       font-size: 25px;
     }
@@ -75,6 +103,7 @@
     .article-body {
       font-size: 14px;
     }
+
     .aside-list li a {
       font-size: 13px;
       color: orange;
@@ -83,6 +112,7 @@
       font-size: 15px;
       color: blue;
     }
+
     .outer-menu-item {
       display: block;
       height: 30px;
@@ -90,14 +120,11 @@
       line-height: 30px;
       padding: 5px 20px;
       text-align: center;
+      float: left;
     }
     .outer-menu-item:hover {
       background-color: black;
       color: white;
-    }
-    .input-search:focus {
-      background-color: yellow;
-      outline: 0;
     }
   </style>
 </head>
