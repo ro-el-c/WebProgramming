@@ -1,103 +1,116 @@
 <!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
-  <script>
-    function show() {
-      var form = document.myform; //document 안에 name이 myfrom인 태그
-      var id = form["user-id"].value; //name 속성 값이 id인 객체
-      var name = form["user-name"].value;
-      var gender = form["gender"].value;
-      var cell = form["phone1"].value + form["phone2"].value + form["phone3"].value;
-      var address = form["user-address"].value;
-      var hobby = "";
-      for (var i = 1; i <= 4; i++) {
-        if (form["hobby" + i].checked) {
-          hobby += form["hobby" + i].value + " ";
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      function show() {
+        var form = document.myform; //document 안에 name이 myfrom인 태그
+        var id = form["user-id"].value; //name 속성 값이 id인 객체
+        var name = form["user-name"].value;
+        var gender = form["gender"].value;
+        var cell =
+          form["phone1"].value + form["phone2"].value + form["phone3"].value;
+        var address = form["user-address"].value;
+        var hobby = "";
+        for (var i = 1; i <= 4; i++) {
+          if (form["hobby" + i].checked) {
+            hobby += form["hobby" + i].value + " ";
+          }
         }
+        var str = id + "\n" + name + "\n" + gender + "\n";
+        str += cell + "\n" + address + "\n" + hobby;
+        alert(str);
       }
-      var str = id + "\n" + name + "\n" + gender + "\n";
-      str += cell + "\n" + address + "\n" + hobby;
-      alert(str);
-    }
-  </script>
-  <title>HTML</title>
-  <style>
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-    }
-  </style>
-</head>
-<body>
-  <h1>회원가입</h1>
-  <form name="myform" method="post">
-    <table>
-      <tr>
-        <td>아이디:</td>
-        <td>
-          <input type="text" name="user-id" size="15" maxlength="12">
-        </td>
-      </tr>
-      <tr>
-        <td>이름:</td>
-        <td>
-          <input type="text" name="user-name" size="15" maxlength="12">
-        </td>
-      </tr>
-      <tr>
-        <td>비밀번호:</td>
-        <td>
-          <input type="password" name="user-password" size="15" maxlength="10">
-        </td>
-      </tr>
-      <tr>
-        <td>성별:</td>
-        <td>
-          <input type="radio" name="gender" value="male">남성
-          <input type="radio" name="gender" value="female"checked>여성
-          <!--동일 name 속성을 가지는 radio 버튼 중 하나만 선택 가능-->
-          <!--선택한 "값"은 value 속성에 지정-->
-        </td>
-      </tr>
-      <tr>
-        <td>휴대전화:</td>
-        <td>
-          <select name="phone1">
-            <option value="default" selected>선택</option>
-            <option value="010">010</option>
-            <option value="011">011</option>
-            <option value="016">016</option>
-            <option value="017">017</option>
-            <option value="070">070</option>
-          </select>
-          <input type="text" size="4" maxlength="4" name="phone2">
-          <input type="text" size="4" maxlength="4" name="phone3">
-        </td>
-      </tr>
-      <tr>
-        <td>주소:</td>
-        <td>
-          <input type="text" name="user-address" size="60">
-        </td>
-      </tr>
-      <tr>
-        <td>취미:</td>
-        <td>
-          <input type="checkbox" name="hobby1" value="music">음악 감상
-          <input type="checkbox" name="hobby2" value="ott">OTT 감상
-          <input type="checkbox" name="hobby3" value="film-camera">필름카메라 촬영
-          <input type="checkbox" name="hobby4" value="texas-holdem">홀덤
-        </td>
-      </tr>
-      <tr>
-        <td>자기소개:</td>
-        <td>
-          <textarea name="user-introduce" cols="60" rows="5"></textarea>
-        </td>
-      </tr>
-    </table>
-    <input type="button" value="회원 가입" onclick="show();">
-    <input type="reset" value="다시 작성">
-  </form>
-</body>
+    </script>
+    <title>HTML</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <form name="myform" method="post">
+      <table>
+        <tr>
+          <td>아이디:</td>
+          <td>
+            <input type="text" name="user-id" size="15" maxlength="12" />
+          </td>
+        </tr>
+        <tr>
+          <td>이름:</td>
+          <td>
+            <input type="text" name="user-name" size="15" maxlength="12" />
+          </td>
+        </tr>
+        <tr>
+          <td>비밀번호:</td>
+          <td>
+            <input
+              type="password"
+              name="user-password"
+              size="15"
+              maxlength="10"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>성별:</td>
+          <td>
+            <input type="radio" name="gender" value="male" />남성
+            <input type="radio" name="gender" value="female" checked />여성
+            <!--동일 name 속성을 가지는 radio 버튼 중 하나만 선택 가능-->
+            <!--선택한 "값"은 value 속성에 지정-->
+          </td>
+        </tr>
+        <tr>
+          <td>휴대전화:</td>
+          <td>
+            <select name="phone1">
+              <option value="default" selected>선택</option>
+              <option value="010">010</option>
+              <option value="011">011</option>
+              <option value="016">016</option>
+              <option value="017">017</option>
+              <option value="070">070</option>
+            </select>
+            <input type="text" size="4" maxlength="4" name="phone2" />
+            <input type="text" size="4" maxlength="4" name="phone3" />
+          </td>
+        </tr>
+        <tr>
+          <td>주소:</td>
+          <td>
+            <input type="text" name="user-address" size="60" />
+          </td>
+        </tr>
+        <tr>
+          <td>취미:</td>
+          <td>
+            <input type="checkbox" name="hobby1" value="music" />음악 감상
+            <input type="checkbox" name="hobby2" value="ott" />OTT 감상
+            <input
+              type="checkbox"
+              name="hobby3"
+              value="film-camera"
+            />필름카메라 촬영
+            <input type="checkbox" name="hobby4" value="texas-holdem" />홀덤
+          </td>
+        </tr>
+        <tr>
+          <td>자기소개:</td>
+          <td>
+            <textarea name="user-introduce" cols="60" rows="5"></textarea>
+          </td>
+        </tr>
+      </table>
+      <input type="button" value="회원 가입" onclick="show();" />
+      <input type="reset" value="다시 작성" />
+    </form>
+  </body>
 </html>
