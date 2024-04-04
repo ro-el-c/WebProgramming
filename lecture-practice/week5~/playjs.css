@@ -81,3 +81,11 @@ footer > p {
   border:  1px solid black;
   margin-top: 10px;
 }
+
+th {
+  background-color: lightgray;
+}
+td {
+  width: 60px;
+  text-align: center;
+}
