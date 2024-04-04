@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 영어 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+KR&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee&family=IBM+Plex+Sans+KR&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 한국어 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./mystyle.css" />
+    <title>한양도성길, 낙산구간을 소개합니다.</title>
+  </head>
+  <body>
+    <input type="radio" id="trail-intro" name="tab" checked="checked" />
+    <input type="radio" id="trail-detail" name="tab" />
+    <input type="radio" id="about-me" name="tab" />
+    <input type="radio" id="about-partner" name="tab" />
+
+    <!-- 헤더 -->
+    <header id="main-header">
+      <h2 id="header__title">Web Programming</h2>
+
+      <!-- 네비게이션 바 (탭바) -->
+      <nav class="tab-title">
+        <label for="trail-intro">Intro</label>
+        <label for="trail-detail">Trail Detail</label>
+        <label for="about-me">About Me</label>
+        <label for="about-partner">My Partner</label>
+      </nav>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <section id="content">
+      <div class="trail-intro">
+        <div class="banner">
+          <div class="banner-info-container">
+            <h1 class="intro-banner__title">한양도성길,<br>낙산구간을 소개합니다.</h1>
+            <h4 class="intro-banner__subtitle">한성대입구역부터 동대문역까지,<br>성곽을 따라 걷다 연극도 함께 즐겨보세요 :)</h4>
+
+            <div class="go-detail-btn"><span>View Detail</span></div>
+          </div>
+        </div>
+        <!-- <div class="after-banner"></div> -->
+      </div>
+
+      <div class="trail-detail">
+        <div class="banner"></div>
+      </div>
+
+      <div class="about-me">
+        <div class="banner"></div>
+      </div>
+
+      <div class="about-partner">
+        <div class="banner"></div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+/* CSS 전역 변수 선언 */
+:root {
+	--josefin-font-padding: 5px; /* Josefin Sans 폰트가 가지는 하단 여백을 해결하기 위함*/
+}
+
+/* CSS 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", "IBM Plex Sans KR", sans-serif;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: 0;
+}
+
+body {
+  width: 100%;
+}
+
+/* Scroll Bar Styles */
+body::-webkit-scrollbar { /* 스크롤바 전체 기본 꾸미기 */
+	width: 7px;
+}
+body::-webkit-scrollbar-thumb { /* 스크롤바 막대 꾸미기 */
+  background: #7eccc3; /* 스크롤바 막대 색상 */
+  border: 1px solid #aeeae3; /* 스크롤바 막대 테두리 설정  */
+  border-radius: 30%;
+}
+/* 스크롤바 트랙 꾸미기 
+body::-webkit-scrollbar-track { 
+	
+} */
+
+/* Title & Navigation Bar Styles */
+#main-header {
+  margin-top: 30px;
+  padding: 0 80px;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0px;
+
+  color: #FFF;
+  border-top: 1px solid #5C6168;
+  border-bottom: 1px solid #5C6168;
+}
+
+#main-header .tab-title {
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+#main-header .tab-title label {
+  font-size: 20px;
+  padding-top: var(--josefin-font-padding);
+}
+
+#header__title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 77.1%;
+  
+  padding-top: var(--josefin-font-padding);
+}
+
+/* Tab Bar Styles */
+body input {
+  display: none;
+}
+input:nth-of-type(1) ~ #content .trail-intro {
+  display: none;
+}
+input:nth-of-type(1):checked ~ #content .trail-intro {
+  display: block;
+}
+input:nth-of-type(1):checked ~ #main-header .tab-title label:nth-of-type(1) {
+  text-decoration-line: underline;
+}
+
+input:nth-of-type(2) ~ #content .trail-detail {
+  display: none;
+}
+input:nth-of-type(2):checked ~ #content .trail-detail {
+  display: block;
+}
+input:nth-of-type(2):checked ~ #main-header .tab-title label:nth-of-type(2) {
+  text-decoration-line: underline;
+}
+
+input:nth-of-type(3) ~ #content .about-me {
+  display: none;
+}
+input:nth-of-type(3):checked ~ #content .about-me {
+  display: block;
+}
+input:nth-of-type(3):checked ~ #main-header .tab-title label:nth-of-type(3) {
+  text-decoration-line: underline;
+}
+
+input:nth-of-type(4) ~ #content .about-partner {
+  display: none;
+}
+input:nth-of-type(4):checked ~ #content .about-partner {
+  display: block;
+}
+input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
+  text-decoration-line: underline;
+}
+
+
+/* Content Styles */
+#content .banner {
+  padding: 0 80px;
+  height: 100vh;
+  background-color: #292E36;
+}
+
+/* Trail Intro Styles */
+.trail-intro > .banner {
+  height: 100vh;
+  background: url("./image/intro_banner.png") #292E36;
+  background-repeat: no-repeat;
+}
+.banner .banner-info-container {
+  position: absolute;
+  bottom: 53px;
+}
+.trail-intro .intro-banner__title {
+
+  color: #FFF;
+  font-family: "IBM Plex Sans KR";
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 700;
+}
