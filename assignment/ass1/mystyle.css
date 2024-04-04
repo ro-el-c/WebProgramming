@@ -1,6 +1,9 @@
 /* CSS 전역 변수 선언 */
 :root {
 	--josefin-font-padding: 5px; /* Josefin Sans 폰트가 가지는 하단 여백을 해결하기 위함*/
+  --point-color: #82d4ca;
+  --font-color: #DEDEDE;
+  --default-dark-background-color: #3C414A;
 }
 
 /* CSS 초기화 */
@@ -25,22 +28,19 @@ body {
 }
 
 /* Scroll Bar Styles */
-body::-webkit-scrollbar { /* 스크롤바 전체 기본 꾸미기 */
-	width: 7px;
+body::-webkit-scrollbar { /* 스크롤바 전체 */
+	width: 6px;
 }
-body::-webkit-scrollbar-thumb { /* 스크롤바 막대 꾸미기 */
-  background: #7eccc3; /* 스크롤바 막대 색상 */
-  border: 1px solid #aeeae3; /* 스크롤바 막대 테두리 설정  */
+body::-webkit-scrollbar-thumb { /* 스크롤바 막대 */
+  background: var(--point-color);
   border-radius: 30%;
 }
-/* 스크롤바 트랙 꾸미기 
-body::-webkit-scrollbar-track { 
-	
-} */
+body::-webkit-scrollbar-track { /*스크롤바 트랙 */
+  background: #3b5f5b;
+}
 
 /* Title & Navigation Bar Styles */
 #main-header {
-  margin-top: 30px;
   padding: 0 80px;
 
   width: 100%;
@@ -51,9 +51,11 @@ body::-webkit-scrollbar-track {
   position: fixed;
   top: 0px;
 
+  background-color: var(--default-dark-background-color);
   color: #FFF;
-  border-top: 1px solid #5C6168;
   border-bottom: 1px solid #5C6168;
+
+  z-index: 1;
 }
 
 #main-header .tab-title {
@@ -65,6 +67,7 @@ body::-webkit-scrollbar-track {
 #main-header .tab-title label {
   font-size: 20px;
   padding-top: var(--josefin-font-padding);
+  color: var(--font-color);
 }
 
 #header__title {
@@ -73,6 +76,7 @@ body::-webkit-scrollbar-track {
   font-weight: 400;
   font-style: normal;
   line-height: 77.1%;
+  color: var(--point-color);
   
   padding-top: var(--josefin-font-padding);
 }
@@ -89,6 +93,8 @@ input:nth-of-type(1):checked ~ #content .trail-intro {
 }
 input:nth-of-type(1):checked ~ #main-header .tab-title label:nth-of-type(1) {
   text-decoration-line: underline;
+  text-decoration-color: var(--point-color);
+  text-underline-offset: 5px;
 }
 
 input:nth-of-type(2) ~ #content .trail-detail {
@@ -99,6 +105,8 @@ input:nth-of-type(2):checked ~ #content .trail-detail {
 }
 input:nth-of-type(2):checked ~ #main-header .tab-title label:nth-of-type(2) {
   text-decoration-line: underline;
+  text-decoration-color: var(--point-color);
+  text-underline-offset: 5px;
 }
 
 input:nth-of-type(3) ~ #content .about-me {
@@ -109,6 +117,8 @@ input:nth-of-type(3):checked ~ #content .about-me {
 }
 input:nth-of-type(3):checked ~ #main-header .tab-title label:nth-of-type(3) {
   text-decoration-line: underline;
+  text-decoration-color: var(--point-color);
+  text-underline-offset: 5px;
 }
 
 input:nth-of-type(4) ~ #content .about-partner {
@@ -119,31 +129,63 @@ input:nth-of-type(4):checked ~ #content .about-partner {
 }
 input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   text-decoration-line: underline;
+  text-decoration-color: var(--point-color);
+  text-underline-offset: 5px;
 }
 
-
 /* Content Styles */
+#content {
+  margin-top: 85px;
+}
+
 #content .banner {
   padding: 0 80px;
-  height: 100vh;
-  background-color: #292E36;
+  height: calc(100vh - 85px);
+  background-color: var(--default-dark-background-color);
 }
 
 /* Trail Intro Styles */
-.trail-intro > .banner {
-  height: 100vh;
+#content .trail-intro > .banner {
   background: url("./image/intro_banner.png") #292E36;
   background-repeat: no-repeat;
-}
-.banner .banner-info-container {
-  position: absolute;
-  bottom: 53px;
-}
-.trail-intro .intro-banner__title {
+  background-size: cover;
+  background-color: none;
 
+  position: relative;
+}
+.trail-intro .banner .intro-banner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: start;
+
+  position: absolute;
+  bottom: 80px;
+}
+.intro-banner-container .intro-banner__title {
   color: #FFF;
   font-family: "IBM Plex Sans KR";
   font-size: 70px;
   font-style: normal;
   font-weight: 700;
+  line-height: 95px;
+}
+.intro-banner-container .intro-banner__subtitle {
+  color: var(--font-color);
+  font-family: "IBM Plex Sans KR";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 29.095px */
+}
+.intro-banner-container .intro-banner__scroll-down {
+  margin-top: 25px;
+  padding: 15px 35px;
+  border: 0.5px solid var(--point-color);
+  font-size: 15px;
+  color: var(--font-color);
+}
+
+#content .trail-intro .after-banner {
+  height: 500px;
 }
