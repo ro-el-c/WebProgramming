@@ -36,7 +36,7 @@ function guess() {
 function replay() {
   computerNumber = getRandomNum1to100();
   nGuesses = 0;
-  document.getElementById("guesses").value = 0;
-  document.getElementById("user").innerHTML = "";
+  document.getElementById("guesses").value = nGuesses;
+  document.getElementById("result").value = "";
   document.getElementById("computer-num").value = computerNumber;
 }
