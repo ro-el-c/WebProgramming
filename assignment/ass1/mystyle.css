@@ -70,7 +70,7 @@ body::-webkit-scrollbar-track { /*스크롤바 트랙 */
   align-items: center;
 }
 #main-header .tab-title label {
-  width: 170px;
+  padding: 0 30px;
   font-size: 1.25rem;
   font-family: "Josefin Sans";
   padding-top: var(--josefin-font-padding);
