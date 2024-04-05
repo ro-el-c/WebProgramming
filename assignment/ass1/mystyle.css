@@ -2,6 +2,7 @@
 :root {
 	--josefin-font-padding: 5px; /* Josefin Sans 폰트가 가지는 하단 여백을 해결하기 위함*/
   --point-color: #82d4ca;
+  --point-middle-color: #299387;
   --point-dark-color: #3b5f5b;
   --font-color: #DEDEDE;
   --dark-font-color: #292E36;
