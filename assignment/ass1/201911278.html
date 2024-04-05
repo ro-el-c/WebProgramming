@@ -18,8 +18,8 @@
     <title>한양도성길, 낙산구간을 소개합니다.</title>
   </head>
   <body>
-    <input type="radio" id="trail-intro" name="tab" checked="checked" />
-    <input type="radio" id="trail-detail" name="tab" />
+    <input type="radio" id="trail-intro" name="tab" />
+    <input type="radio" id="trail-detail" name="tab" checked="checked" />
     <input type="radio" id="about-me" name="tab" />
     <input type="radio" id="about-partner" name="tab" />
 
@@ -39,7 +39,7 @@
     <!-- 메인 컨텐츠 -->
     <section id="content">
       <!-- 홈 화면 - 산책로 개요, 선정 이유 -->
-      <div class="trail-intro">
+      <section class="trail-intro">
         <!-- 배너 -->
         <div class="banner">
           <div class="banner-text-container intro-banner-text-container">
@@ -83,7 +83,7 @@
               혜화역 쪽으로 이동하여 재밌는 <span>연극</span>을 감상해도 좋다.
               이렇게 다양한 즐길거리가 존재하는 낙산 구간의 산책로의 자세한
               정보가 궁금하다면
-              <span class="outline__etc">상단의 Trail Detail 클릭!</span>
+              <span class="outline__etc">상단의 Trail Detail 클릭하기!</span>
             </p>
           </div>
           <div class="vertical-line"></div>
@@ -108,9 +108,9 @@
               취향을 저격했다.. <span>(상세 페이지에 비하인드 있음)</span>
               <br /><br />
               운이 좋게도 친한 친구와 이번 과제를 함께하게 되었다. 좋은 친구와는
-              언제나 좋은 경험을 공유하고 싶은 법. <br>생활 반경(건대)을 벗어나
-              산책하며 환기도 하고 연극도 보고 맛있는 식사도 하며 행복한 하루를
-              보내기로 했다!
+              언제나 좋은 경험을 공유하고 싶은 법. <br />생활 반경(건대)을
+              벗어나 산책하며 환기도 하고 연극도 보고 맛있는 식사도 하며 행복한
+              하루를 보내기로 했다!
             </p>
           </div>
         </article>
@@ -141,41 +141,52 @@
             </p>
           </div>
         </article>
-      </div>
+      </section>
 
       <!-- 산책로 상세 정보 -->
-      <div class="trail-detail">
+      <section class="trail-detail">
         <!-- 배너 - 산책로 프리뷰 -->
         <div class="banner detail-banner">
           <div class="banner__title-container">
-            <h2 class="detail-banner__title">한양도성길 낙산구간, 이렇게 다녀오세요.</h2>
+            <h2 class="detail-banner__title">
+              한양도성길 낙산구간, 이렇게 다녀오세요.
+            </h2>
             <h4 class="detail-banner__subtitle">즐길 거리 Big 4</h4>
           </div>
-          <img src="./assets/trail-detail-banner.svg" alt="산책로 물결 선">
+          <img src="./assets/trail-detail-banner.svg" alt="산책로 물결 선" />
           <div class="banner__scroll-down">
             <span>Scroll Down</span>
           </div>
         </div>
 
         <!-- 1. 혜화문 -->
+        <article class="trail-start">
           <!-- tip: 파티룸 '낙산 수화' -->
+        </article>
 
         <!-- 2. 낙산 공원 -->
+        <article class="course-2">
           <!-- tip: 가을 날씨의 낙산 공원 -->
+        </article>
 
         <!-- 3. 이화 벽화 마을 -->
+        <article class="course-3">
           <!-- tip: 다양한 카페(내가 갔던 곳은 토끼가 있었음!!), 주의사항 주택가이므로 조용히 할 것 -->
-        
+        </article>
+
         <!-- 4. 흥인지문 -->
+        <article class="course-end">
           <!-- tip: 야경 쥑임.. -->
+        </article>
 
+        <section class="trail-additional">
+          <!-- tip: 혜화역 인근의 다양한 연극 -->
+          <article class="trai-plays"></article>
 
-        <!-- tip: 혜화역 인근의 다양한 연극 -->
-
-        <!-- tmi images: 필름 카메라에 담기는 아름다운 풍경 -->
-
-
-      </div>
+          <!-- tmi images: 필름 카메라에 담기는 아름다운 풍경 -->
+          <article class="trail-film-images"></article>
+        </section>
+      </section>
 
       <!-- 나란 사람 소개 -->
       <div class="about-me">

@@ -154,6 +154,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 
 /* Trail Intro Styles */
+/* Trail Intro - Banner */
 #content > .trail-intro > .banner {
   background: url("./images/intro_banner.png") #292E36;
   background-repeat: no-repeat;
@@ -312,6 +313,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
 
 /* Trail Detail Styles */
+/* Trail Detail - Banner */
 #content .trail-detail > .banner {
   padding: 2vw 5.5vw;
   background-color: var(--dark-background-color);
@@ -322,7 +324,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   justify-content: space-between;
 
   img {
-    width: 78vw;
+    width: 85vw;
     height: 65vh;
   }
 }
@@ -345,6 +347,9 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   font-size: 1.5rem;
   font-weight: 700;
 }
+
+/* Trail Detail - 각 구간 */
+
 
 
 
