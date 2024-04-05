@@ -47,7 +47,7 @@ body::-webkit-scrollbar-track { /*스크롤바 트랙 */
 
 /* Title & Navigation Bar Styles */
 #main-header {
-  padding: 0 80px;
+  padding: 0 5.5vw;
 
   width: 100%;
   display: flex;
@@ -144,7 +144,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   margin-top: 85px;
 }
 #content .banner {
-  padding: 0 80px;
+  padding: 0 6vw;
   height: calc(100vh - 85px);
 }
 
@@ -164,7 +164,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   align-items: start;
 
   position: absolute;
-  bottom: 80px;
+  bottom: 5.5vw;
 }
 .intro-banner-text-container .intro-banner__title {
   color: #FFF;
@@ -194,7 +194,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 #content .trail-intro .my-trail-outline,
 #content .trail-intro .seoul-trail-outline {
-  padding: 80px 130px;
+  padding: 5.5vw 8vw;
 
   display: flex;
   justify-content: space-between;
@@ -258,19 +258,19 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
 .trail-intro article .vertical-line {
   width: 1px;
-  height: 65%;
+  height: 360px;
   background-color: #93B0B6;
 }
 
 .trail-intro article .outline__image {
-  height: 70%;
+  height: 380px;
   border-radius: 15px;
   object-fit: cover;
 }
 
 /* Trail Intro - 산책로 선정 이유 */
 .trail-intro .selection-reason {
-  padding: 70px 90px;
+  padding: 70px 10vw;
   background-color: var(--dark-light-background-color); /*#414650*/
   text-align: center;
 
@@ -287,7 +287,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 .selection-reason .reason__content {
   margin: 0 100px;
-  padding: 40px 80px;
+  padding: 2.7vw 5.5vw;
   background-color: var(--dark-background-color); /*#333841*/
 
   border: 1px solid rgba(130, 212, 202, 0.4);
@@ -308,7 +308,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
 /* Trail Detail Styles */
 #content .trail-detail > .banner {
-  padding: 30px 80px;
+  padding: 2vw 5.5vw;
   background-color: var(--dark-background-color);
 
   display: flex;
@@ -347,7 +347,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 /* Footer Styles */
 #footer {
   height: 50px;
-  padding: 0 80px;
+  padding: 0 5.5vw;
   background-color: var(--dark-light-background-color);
 
   border-top: 1px solid var(--point-dark-color);
