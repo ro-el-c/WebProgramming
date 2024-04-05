@@ -3,15 +3,18 @@
 	--josefin-font-padding: 5px; /* Josefin Sans 폰트가 가지는 하단 여백을 해결하기 위함*/
   --point-color: #82d4ca;
   --font-color: #DEDEDE;
-  --default-dark-background-color: #3C414A;
+  --dark-font-color: #292E36;
+  --dark-background-color: #3C414A; /* 기본 배경색 ex. header,  */
+  --light-background-color: #FFF8F5;
 }
 
 /* CSS 초기화 */
 * {
   margin: 0;
   padding: 0;
-  font-family: "Josefin Sans", "IBM Plex Sans KR", sans-serif;
+  font-family: "IBM Plex Sans KR", "Josefin Sans", sans-serif;
   box-sizing: border-box;
+  color: var(--font-color);
 }
 li {
   list-style: none;
@@ -51,9 +54,9 @@ body::-webkit-scrollbar-track { /*스크롤바 트랙 */
   position: fixed;
   top: 0px;
 
-  background-color: var(--default-dark-background-color);
+  background-color: var(--dark-background-color);
   color: #FFF;
-  border-bottom: 1px solid #5C6168;
+  border-bottom: 1px solid #3b5f5b;
 
   z-index: 1;
 }
@@ -66,8 +69,8 @@ body::-webkit-scrollbar-track { /*스크롤바 트랙 */
 }
 #main-header .tab-title label {
   font-size: 20px;
+  font-family: "Josefin Sans";
   padding-top: var(--josefin-font-padding);
-  color: var(--font-color);
 }
 
 #header__title {
@@ -141,7 +144,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 #content .banner {
   padding: 0 80px;
   height: calc(100vh - 85px);
-  background-color: var(--default-dark-background-color);
+  background-color: var(--dark-background-color);
 }
 
 /* Trail Intro Styles */
@@ -164,26 +167,23 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 .intro-banner-container .intro-banner__title {
   color: #FFF;
-  font-family: "IBM Plex Sans KR";
   font-size: 70px;
   font-style: normal;
   font-weight: 700;
   line-height: 95px;
 }
 .intro-banner-container .intro-banner__subtitle {
-  color: var(--font-color);
-  font-family: "IBM Plex Sans KR";
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 30px; /* 29.095px */
+  line-height: 30px;
 }
 .intro-banner-container .intro-banner__scroll-down {
-  margin-top: 25px;
+  margin-top: 30px;
   padding: 15px 35px;
   border: 0.5px solid var(--point-color);
+  font-family: "Josefin Sans";
   font-size: 15px;
-  color: var(--font-color);
 }
 
 #content .trail-intro .after-banner {
