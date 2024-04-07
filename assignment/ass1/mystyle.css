@@ -1,6 +1,7 @@
 /* CSS 전역 변수 선언 */
 :root {
-	--josefin-font-padding: 5px; /* Josefin Sans 폰트가 가지는 하단 여백을 해결하기 위함*/
+	--little-font-padding: 5px; /* Josefin Sans 폰트가 가지는 하단 여백을 해결하기 위함*/
+  --big-font-padding: 10px;
   --point-color: #82d4ca;
   --point-middle-color: #299387;
   --point-dark-color: #3b5f5b;
@@ -9,6 +10,7 @@
   --dark-background-color: #292E36;
   --dark-light-background-color: #313742;
   --light-background-color: #FFF8F5;
+  --warning-color: #ff8331;
 }
 
 /* CSS 초기화 */
@@ -105,7 +107,7 @@ input:nth-of-type(1):checked ~ #content .trail-intro {
 input:nth-of-type(1):checked ~ #main-header .tab-title label:nth-of-type(1) {
   text-decoration-line: underline;
   text-decoration-color: var(--point-color);
-  text-underline-offset: 5px;
+  text-underline-offset: var(--little-font-padding);
 }
 
 input:nth-of-type(2) ~ #content .trail-detail {
@@ -117,7 +119,7 @@ input:nth-of-type(2):checked ~ #content .trail-detail {
 input:nth-of-type(2):checked ~ #main-header .tab-title label:nth-of-type(2) {
   text-decoration-line: underline;
   text-decoration-color: var(--point-color);
-  text-underline-offset: 5px;
+  text-underline-offset: var(--little-font-padding);
 }
 
 input:nth-of-type(3) ~ #content .about-me {
@@ -129,7 +131,7 @@ input:nth-of-type(3):checked ~ #content .about-me {
 input:nth-of-type(3):checked ~ #main-header .tab-title label:nth-of-type(3) {
   text-decoration-line: underline;
   text-decoration-color: var(--point-color);
-  text-underline-offset: 5px;
+  text-underline-offset: var(--little-font-padding);
 }
 
 input:nth-of-type(4) ~ #content .about-partner {
@@ -141,7 +143,7 @@ input:nth-of-type(4):checked ~ #content .about-partner {
 input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   text-decoration-line: underline;
   text-decoration-color: var(--point-color);
-  text-underline-offset: 5px;
+  text-underline-offset: var(--little-font-padding);
 }
 
 
@@ -243,7 +245,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
   text-decoration-line: underline;
   text-decoration-color: var(--point-dark-color);
-  text-underline-offset: 10px;
+  text-underline-offset: var(--big-font-padding);
 }
 .outline-text-container .outline__subtitle {
   font-size: 1.3rem;
@@ -257,7 +259,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     display: inline;
     text-decoration-line: underline;
     text-decoration-color: rgba(85, 85, 85, 0.9);
-    text-underline-offset: 5px;
+    text-underline-offset: var(--little-font-padding);
   }
 }
 .outline-text-container span.outline__etc {
@@ -294,7 +296,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   font-size: 1.7rem;
   text-decoration-line: underline;
   text-decoration-color: var(--point-color);
-  text-underline-offset: 10px;
+  text-underline-offset: var(--big-font-padding);
 }
 .selection-reason .reason__content,
 .course-tip .course-tip-container {
@@ -400,9 +402,16 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   align-items: center;
   gap: 50px;
 
+  .course__title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 3px;
+  }
+
   h3 {
     color: var(--dark-font-color);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
   }
   .course__title-container > p:nth-of-type(1) {
@@ -430,35 +439,67 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 40px;
+  gap: 20px;
 
+  span, p {
+    font-size: 1.2rem;
+    color: var(--dark-font-color);
+  }
+  p {
+    padding: 0 5.5vw;
+  }
+  span {
+    display: inline;
+    text-decoration-line: underline;
+    text-decoration-color: rgba(85, 85, 85, 0.9);
+    text-underline-offset: var(--little-font-padding);
+  }
+  .warning {
+    text-decoration-color: var(--warning-color);
+  }
 }
 .trail-detail .course-path > h3 {
   font-size: 1.7rem;
   font-weight: 700;
   color: var(--dark-font-color);
+  
+  text-decoration-line: underline;
+  text-decoration-color: var(--point-dark-color);
+  text-underline-offset: var(--big-font-padding);
 }
 .trail-detail .course-path .course__image-container {
+  padding: 20px 0;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  overflow: auto;
+  gap: 25px;
+  flex-wrap: nowrap;
+  position: relative;
   
   img {
     width: 230px;
     border-radius: 10px;
   }
 }
-.trail-detail .course-path > p {
-  padding: 0 5.5vw;
-  font-size: 1.2rem;
-  color: var(--dark-font-color);
+.course-path .course__image-container::-webkit-scrollbar {
+  overflow: hidden;
+}
+.course-path .course__image-container span,
+.course-tip .course-tip__image-container span {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #757575;
 }
 
 /* Trail Detail - Course Tip Styles */
 .course-tip .course-tip-container {
   display: flex;
   flex-direction: column;
-  gap: 23px;
+  gap: 18px;
 
   p {
     font-size: 1rem;
@@ -474,6 +515,13 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     font-size: 0.7rem;
     color:#787878
   }
+  span.warning {
+    font-size: 1rem;
+    color: var(--font-color);
+    text-decoration: underline;
+    text-decoration-color: var(--warning-color);
+    text-underline-offset: var(--little-font-padding);
+  }
 
   .course-tip__image-container {
     width: 100%;
@@ -482,6 +530,8 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     flex-wrap: nowrap;
     overflow: auto;
     gap: 20px;
+    padding: 20px 0;
+    position: relative;
 
     img {
       width: 210px;
