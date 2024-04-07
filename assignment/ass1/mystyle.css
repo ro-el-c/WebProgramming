@@ -219,6 +219,9 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 .trail-detail .course-naksan-park {
   background-color: #F0DEDE;
 }
+.trail-detail .course-ihwa-mural-village {
+  background-color: #EDD9F2;
+}
 
 .trail-intro .outline-text-container,
 .trail-detail .course-text-container {
@@ -420,6 +423,11 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     color: #757575;
     font-size: 1rem;
   }
+  .warning {
+    text-decoration: underline;
+    text-decoration-color: var(--warning-color);
+    text-underline-offset: var(--little-font-padding);
+  }
 }
 .trail-detail .course-container .course__image {
   height: 210px;
@@ -465,8 +473,9 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   .warning {
     text-decoration-color: var(--warning-color);
   }
-  .course-cafe {
+  .course-location {
     color: var(--location-color);
+    text-decoration: none;
   }
   .additional-description {
     font-size: 0.7rem;
@@ -502,14 +511,15 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     width: 230px;
     border-radius: 10px;
   }
-  img:nth-of-type(1),
-  img:nth-of-type(4),
-  img:nth-of-type(5) {
-    height: 240px;
-    width: 320px;
-    object-fit: cover;
-    border-radius: 5px;
-  }
+}
+
+.naksan-park-path .course__image-container img:nth-of-type(1),
+.naksan-park-path .course__image-container img:nth-of-type(4),
+.naksan-park-path .course__image-container img:nth-of-type(5),
+.trail-photo-spot-path .course__image-container img:nth-of-type(3),
+.trail-photo-spot-path .course__image-container img:nth-of-type(4) {
+  width: 300px;
+  object-fit: cover;
 }
 .course-path .course__image-container::-webkit-scrollbar {
   overflow: hidden;
@@ -551,6 +561,13 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     text-decoration-color: var(--warning-color);
     text-underline-offset: var(--little-font-padding);
   }
+  .highlighting {
+    font-size: 1rem;
+    color: var(--font-color);
+    text-decoration-line: underline;
+    text-decoration-color: var(--point-middle-color);
+    text-underline-offset: var(--little-font-padding);
+  }
 
   .course-tip__image-container {
     width: 100%;
@@ -572,15 +589,10 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     overflow: hidden;
   }
 }
-.tip-naksan-soohwa .course-tip__image-container > img:nth-of-type(4) {
+.tip-naksan-soohwa .course-tip__image-container > img:nth-of-type(4),
+.tip-ihwa-mural-village__cafe .course-tip__image-container > img:nth-of-type(1) {
   width: 280px;
   object-fit: cover;
-  border-radius: 5px;
-}
-.tip-naksan-soohwa .course-tip__image-container > img:nth-of-type(4) {
-  width: 280px;
-  object-fit: cover;
-  border-radius: 5px;
 }
 
 
