@@ -11,6 +11,7 @@
   --dark-light-background-color: #313742;
   --light-background-color: #FFF8F5;
   --warning-color: #ff8331;
+  --location-color: #a164d6;
 }
 
 /* CSS 초기화 */
@@ -153,7 +154,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 #content .banner {
   padding: 0 6vw;
-  height: calc(100vh - 85px);
+  height: calc(100vh - 80px);
 }
 
 /* Trail Intro Styles */
@@ -214,7 +215,8 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 .trail-detail .course-hyehwadoor {
   background-color: #ECECD6;
 }
-.trail-intro .seoul-trail-outline {
+.trail-intro .seoul-trail-outline,
+.trail-detail .course-naksan-park {
   background-color: #F0DEDE;
 }
 
@@ -419,15 +421,21 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     font-size: 1rem;
   }
 }
-.trail-detail article .course__image {
+.trail-detail .course-container .course__image {
   height: 210px;
   border-radius: 15px;
   object-fit: cover;
 }
-.trail-detail article .vertical-line {
+.trail-detail .course-container .vertical-line {
   width: 1px;
   height: 190px;
   background-color: #93B0B6;
+}
+.trail-detail .course-naksan-park .course__image {
+  height: 230px;
+} 
+.trail-detail .course-naksan-park .vertical-line {
+  height: 210px;
 }
 
 /* Trail Detail - Course Path Styles */
@@ -457,6 +465,18 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   .warning {
     text-decoration-color: var(--warning-color);
   }
+  .course-cafe {
+    color: var(--location-color);
+  }
+  .additional-description {
+    font-size: 0.7rem;
+    color: #787878;
+    text-decoration: none;
+  }
+  .course-tmi {
+    text-decoration: none;
+    font-size: 1rem;
+  }
 }
 .trail-detail .course-path > h3 {
   font-size: 1.7rem;
@@ -472,6 +492,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   overflow: auto;
   gap: 25px;
   flex-wrap: nowrap;
@@ -480,6 +501,14 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   img {
     width: 230px;
     border-radius: 10px;
+  }
+  img:nth-of-type(1),
+  img:nth-of-type(4),
+  img:nth-of-type(5) {
+    height: 240px;
+    width: 320px;
+    object-fit: cover;
+    border-radius: 5px;
   }
 }
 .course-path .course__image-container::-webkit-scrollbar {
@@ -513,9 +542,9 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     margin: 0;
 
     font-size: 0.7rem;
-    color:#787878
+    color:#787878;
   }
-  span.warning {
+  .warning {
     font-size: 1rem;
     color: var(--font-color);
     text-decoration: underline;
@@ -538,17 +567,21 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
       object-fit: cover;
       border-radius: 5px;
     }
-    img:nth-of-type(4) {
-      width: 280px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
   }
   .course-tip__image-container::-webkit-scrollbar { /* 스크롤바 전체 */
     overflow: hidden;
   }
 }
-
+.tip-naksan-soohwa .course-tip__image-container > img:nth-of-type(4) {
+  width: 280px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.tip-naksan-soohwa .course-tip__image-container > img:nth-of-type(4) {
+  width: 280px;
+  object-fit: cover;
+  border-radius: 5px;
+}
 
 
 
