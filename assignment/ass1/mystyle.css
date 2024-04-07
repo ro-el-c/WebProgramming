@@ -199,8 +199,8 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 .trail-intro article:nth-of-type(2) {
   height: 100%;
 }
-#content .trail-intro .my-trail-outline,
-#content .trail-intro .seoul-trail-outline {
+.trail-intro .my-trail-outline,
+.trail-intro .seoul-trail-outline {
   padding: 5.5vw 8vw;
 
   display: flex;
@@ -208,20 +208,26 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   align-items: center;
   gap: 50px;
 }
-.trail-intro .my-trail-outline {
+.trail-intro .my-trail-outline,
+.trail-detail .course-hyehwadoor {
   background-color: #ECECD6;
 }
 .trail-intro .seoul-trail-outline {
   background-color: #F0DEDE;
 }
 
-.trail-intro .outline-text-container {
+.trail-intro .outline-text-container,
+.trail-detail .course-text-container {
   display: flex;
   flex-direction: column;
   align-items: start;
 
   gap: 15px;
   text-align: left;
+
+  span, p {
+    color: #555;
+  }
 }
 .trail-intro .outline__title-container {
   width: 100%;
@@ -230,7 +236,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   align-items: center;
 }
 .trail-intro article .outline__title {
-  color: #292E36;
+  color: var(--dark-font-color);
   font-size: 1.7rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -238,10 +244,6 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   text-decoration-line: underline;
   text-decoration-color: var(--point-dark-color);
   text-underline-offset: 10px;
-}
-.outline-text-container p,
-.outline-text-container span {
-  color: #555;
 }
 .outline-text-container .outline__subtitle {
   font-size: 1.3rem;
@@ -263,7 +265,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   color: var(--point-dark-color);
 }
 
-.trail-intro article .vertical-line {
+.trail-intro article .vertical-line{
   width: 1px;
   height: 360px;
   background-color: #93B0B6;
@@ -276,7 +278,8 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 
 /* Trail Intro - 산책로 선정 이유 */
-.trail-intro .selection-reason {
+.trail-intro .selection-reason,
+.trail-detail .course-tip {
   padding: 70px 10vw;
   background-color: var(--dark-light-background-color); /*#414650*/
   text-align: center;
@@ -285,14 +288,16 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   flex-direction: column;
   gap: 45px;
 }
-.selection-reason .reason__title {
+.selection-reason .reason__title,
+.course-tip .course-tip__title {
   color: #EDEDED;
   font-size: 1.7rem;
   text-decoration-line: underline;
   text-decoration-color: var(--point-color);
   text-underline-offset: 10px;
 }
-.selection-reason .reason__content {
+.selection-reason .reason__content,
+.course-tip .course-tip-container {
   margin: 0 100px;
   padding: 2.7vw 5.5vw;
   background-color: var(--dark-background-color); /*#333841*/
@@ -325,8 +330,8 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   justify-content: space-between;
 
   img {
-    width: 85vw;
-    height: 65vh;
+    width: 85%;
+    height: 65%;
   }
 }
 .detail-banner .banner__title-container {
@@ -349,8 +354,150 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   font-weight: 700;
 }
 
-/* Trail Detail - 각 구간 */
+/* Trail Detail - 시작/종료 위치 및 개방 시간 */
+.trail-detail .info-container {
+  padding: 20px 15vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  background-color: var(--dark-light-background-color);
+  border-top: 1px solid var(--point-dark-color);
+  border-bottom: 1px solid var(--point-dark-color);
+
+  img {
+    width: 45px;
+    height: 45px;
+  }
+}
+.trail-detail .info-container > div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.trail-detail .info-container .info__text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 4px;
+
+  .info__title {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .info__description {
+    font-size: 0.7rem;
+  }
+} 
+
+/* Trail Detail - 각 구간 */
+.trail-detail .course-container {
+  padding: 5.5vw 15vw;
+
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  h3 {
+    color: var(--dark-font-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .course__title-container > p:nth-of-type(1) {
+    color: #757575;
+    font-size: 1rem;
+  }
+}
+.trail-detail article .course__image {
+  height: 210px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.trail-detail article .vertical-line {
+  width: 1px;
+  height: 190px;
+  background-color: #93B0B6;
+}
+
+/* Trail Detail - Course Path Styles */
+.trail-detail .course-path {
+  padding: 3.5vw 15vw;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+
+}
+.trail-detail .course-path > h3 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--dark-font-color);
+}
+.trail-detail .course-path .course__image-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  
+  img {
+    width: 230px;
+    border-radius: 10px;
+  }
+}
+.trail-detail .course-path > p {
+  padding: 0 5.5vw;
+  font-size: 1.2rem;
+  color: var(--dark-font-color);
+}
+
+/* Trail Detail - Course Tip Styles */
+.course-tip .course-tip-container {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+
+  p {
+    font-size: 1rem;
+  }
+  p.course-tip__subtitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  span > a {
+    padding: 0;
+    margin: 0;
+
+    font-size: 0.7rem;
+    color:#787878
+  }
+
+  .course-tip__image-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: auto;
+    gap: 20px;
+
+    img {
+      width: 210px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    img:nth-of-type(4) {
+      width: 280px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+  .course-tip__image-container::-webkit-scrollbar { /* 스크롤바 전체 */
+    overflow: hidden;
+  }
+}
 
 
 
@@ -361,7 +508,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   padding: 0 5.5vw;
   background-color: var(--dark-light-background-color);
 
-  border-top: 1px solid var(--point-dark-color);
+  border-top: 1px solid var(--dark-font-color);
 
   display: flex;
   justify-content: center;
