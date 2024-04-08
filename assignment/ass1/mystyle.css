@@ -41,11 +41,18 @@ body {
 body::-webkit-scrollbar { /* 스크롤바 전체 */
 	width: 6px;
 }
-body::-webkit-scrollbar-thumb { /* 스크롤바 막대 */
-  background: var(--point-color);
-  border-radius: 30%;
+.course-path .course__image-container::-webkit-scrollbar,
+.course-tip__image-container::-webkit-scrollbar {
+  height: 4px;
 }
-body::-webkit-scrollbar-track { /*스크롤바 트랙 */
+body::-webkit-scrollbar-thumb,
+.course-path .course__image-container::-webkit-scrollbar-thumb,
+.course-tip__image-container::-webkit-scrollbar-thumb { /* 스크롤바 막대 */
+  background: var(--point-color);
+}
+body::-webkit-scrollbar-track,
+.course-path .course__image-container::-webkit-scrollbar-track,
+.course-tip__image-container::-webkit-scrollbar-track { /*스크롤바 트랙 */
   background: var(--point-dark-color);
 }
 
@@ -221,6 +228,9 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 .trail-detail .course-ihwa-mural-village {
   background-color: #EDD9F2;
+}
+.trail-detail .course-heunginjimun {
+  background-color: #CBE3E3;
 }
 
 .trail-intro .outline-text-container,
@@ -526,9 +536,6 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   width: 300px;
   object-fit: cover;
 }
-.course-path .course__image-container::-webkit-scrollbar {
-  overflow: hidden;
-}
 .course-path .course__image-container span,
 .course-tip .course-tip__image-container span {
   width: 100%;
@@ -589,13 +596,17 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
       object-fit: cover;
       border-radius: 5px;
     }
-  }
-  .course-tip__image-container::-webkit-scrollbar { /* 스크롤바 전체 */
-    overflow: hidden;
+
+    span {
+      position: absolute;
+      bottom: 2px;
+    }
   }
 }
 .tip-naksan-soohwa .course-tip__image-container > img:nth-of-type(4),
-.tip-ihwa-mural-village__cafe .course-tip__image-container > img:nth-of-type(1) {
+.tip-ihwa-mural-village__cafe .course-tip__image-container > img:nth-of-type(1),
+.tip-plays .course-tip__image-container > img:nth-of-type(1),
+.tip-plays .course-tip__image-container > img:nth-of-type(3) {
   width: 280px;
   object-fit: cover;
 }
