@@ -12,6 +12,7 @@
   --light-background-color: #fff8f5;
   --warning-color: #ff8331;
   --location-color: #a164d6;
+  --location-light-color: #c98cff;
 }
 
 /* CSS 초기화 */
@@ -574,7 +575,8 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     font-size: 1.3rem;
     font-weight: 700;
   }
-  span > a {
+  span > a,
+  .tip-etc {
     padding: 0;
     margin: 0;
 
@@ -594,6 +596,10 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     text-decoration-line: underline;
     text-decoration-color: var(--point-middle-color);
     text-underline-offset: var(--little-font-padding);
+  }
+  .course-location {
+    font-size: 1rem;
+    color: var(--location-light-color);
   }
 
   .course-tip__image-container {
@@ -625,6 +631,9 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 .tip-plays .course-tip__image-container > img:nth-of-type(3) {
   width: 280px;
   object-fit: cover;
+}
+.tip-great-night-view .course-tip__image-container > img:nth-of-type(2) {
+  width: 497px;
 }
 
 /* Footer Styles */
