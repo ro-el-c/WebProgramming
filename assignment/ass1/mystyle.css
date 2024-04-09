@@ -19,10 +19,13 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "IBM Plex Sans KR", "Josefin Sans", sans-serif;
+  font-family: "IBM Plex Sans KR", sans-serif;
   box-sizing: border-box;
   color: var(--font-color);
   font-style: normal;
+}
+.eng {
+  font-family: "Josefin Sans", sans-serif;
 }
 li {
   list-style: none;
@@ -87,8 +90,7 @@ body::-webkit-scrollbar-track,
 #main-header .tab-title label {
   padding: 0 30px;
   font-size: 1.25rem;
-  font-family: "Josefin Sans";
-  padding-top: var(--josefin-font-padding);
+  padding-top: var(--little-font-padding);
   text-align: center;
   border-right: 2px solid var(--point-color);
 }
@@ -102,7 +104,7 @@ body::-webkit-scrollbar-track,
   font-weight: 400;
   color: var(--point-color);
 
-  padding-top: var(--josefin-font-padding);
+  padding-top: var(--little-font-padding);
 }
 
 /* Tab Bar Styles */
@@ -200,7 +202,6 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 #content .banner__scroll-down {
   padding: 15px 35px;
   border-bottom: 0.5px solid var(--point-color);
-  font-family: "Josefin Sans";
   font-size: 0.93rem;
 }
 
@@ -639,7 +640,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
 /* About Me Styles*/
 #content .about-me .banner {
-  padding: 0 18vw;
+  padding: 0 16vw;
   background-color: #F1E5E0;
 
   display: flex;
@@ -654,8 +655,10 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
   h2 {
     padding: 2px 0;
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-family: "Crushed", sans-serif;
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+    font-weight: 400;
     border-top: 1.5px solid var(--point-middle-color);
     border-bottom: 1.5px solid var(--point-middle-color);
   }
@@ -667,27 +670,74 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   display: flex;
   border-radius: 30px;
   border: 0.7px solid var(--point-color);
+}
+.self-introduction .self-intro__image-container {
+  width: 35%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px 0 0 30px;
 
-  .self-intro__image-container {
-    width: 32%;
+  img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 30px 0 0 30px;
+  }
+}
+.self-introduction .self-intro__text-container {
+  padding: 0 40px;
+  width: 65%;
+  height: 100%;
+  border-radius: 0 30px 30px 0;
+  background-color: #fff;
 
-    img {
-      width: 100%;
-      height: 100%;
-      border-radius: 30px 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+
+  .name-container {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+
+    h4 {
+      font-size: 2rem;
+    }
+    span {
+      font-size: 1.5rem;
+      padding-bottom: 3.5px;
     }
   }
-  .self-intro__text-container {
-    width: 68%;
-    height: 100%;
-    border-radius: 0 30px 30px 0;
-    background-color: #fff;
-
-    .eng {
-      font-family: "Josefin Sans", sans-serif;
+  .education {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .self-description {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .social {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+    
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    
+      img {
+        width: 23px;
+        height: 23px;
+      }
+      span {
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
     }
   }
 }
@@ -709,7 +759,6 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 #footer span {
   display: inline-block;
-  font-family: "Josefin Sans", sans-serif;
   font-size: 0.94rem;
   font-weight: 400;
 }
