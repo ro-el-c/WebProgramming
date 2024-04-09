@@ -2,7 +2,7 @@
 <html>
   <head>
     <link
-      href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Josefin+Sans:wght@400..700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./playjs.css" />
@@ -39,7 +39,8 @@
 
       <!-- 구구단 표 -->
       <div class="lab">
-        <h3>구구단 표</h3><br>
+        <h3>구구단 표</h3>
+        <br />
         <table border="1">
           <script>
             for (i = 2; i < 10; i++) {
@@ -49,7 +50,7 @@
               document.write("<tr>");
               for (j = 2; j < 10; j++) {
                 // document.write("<td>" + j + "x" + i + "=" + i*j + "</td>");
-                document.write(`<td>${j}x${i}=${j*i}</td>`);
+                document.write(`<td>${j}x${i}=${j * i}</td>`);
               }
               document.write("</tr>");
             }
@@ -60,22 +61,41 @@
       <!-- 숫자 맞추기 게임 -->
       <div class="lab">
         <h3>숫자 맞추기 게임</h3>
-        <br>이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.<br>
-        숫자는 1부터 100 사이에 있습니다.</p><br>
+        <p>
+          <br />이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.<br />
+          숫자는 1부터 100 사이에 있습니다.
+        </p>
+        <br />
 
         <form>
-          숫자: 
-          <input type="text" id="user" size="5">
-          <input type="button" value="확인" onclick="guess();">
-          <input type="button" value="다시 시작" onclick="replay();">
-          <br><br>
+          숫자:
+          <input type="text" id="user" size="5" />
+          <input type="button" value="확인" onclick="guess();" />
+          <input type="button" value="다시 시작" onclick="replay();" />
+          <br /><br />
           추측 횟수:
-          <input type="text" id="guesses" size="5">
-          힌트: 
-          <input type="text" id="result" size="16">
-          <input type="text" id="computer-num" size="16">
+          <input type="text" id="guesses" size="5" />
+          힌트:
+          <input type="text" id="result" size="16" />
+          <input type="text" id="computer-num" size="16" />
         </form>
       </div>
+    </div>
+    <div id="hangman">
+      <div>
+        <img id="hangmanpic" src="./hangman/hangman6.gif" alt="hangman" />
+      </div>
+      <div id="clue">Press New Game to play!</div>
+      <div>
+        <input type="text" id="hguess" size="1" maxlength="1" />
+        <button id="guessbutton" onclick="guessLetter();" disabled="disabled">
+          Guess
+        </button>
+      </div>
+      <div id="newgamearea">
+        <button onclick="newGame();">New Game</button>
+      </div>
+      <div id="guessstr"></div>
     </div>
     <footer>
       <p>Web Programming, Spring 2024</p>

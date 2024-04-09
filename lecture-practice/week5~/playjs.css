@@ -45,6 +45,11 @@ header > nav {
   float: right;
   border: 1px dashed orange;
   border-radius: 15px;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  line-height: 36px;
 }
 .main-menu {
   display: block;
@@ -88,4 +93,16 @@ th {
 td {
   width: 60px;
   text-align: center;
+}
+
+#hangman {
+  text-align: center;
+}
+#newgamearea {
+  margin-top:2em;
+}
+#clue, #gessstr {
+  font-family: monospace;
+  font-size: 2em;
+  padding: 1em;
 }
