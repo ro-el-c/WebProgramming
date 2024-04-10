@@ -701,8 +701,8 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
   .name-container {
     display: flex;
-    align-items: end;
     gap: 18px;
+    align-items: end;
 
     h4 {
       font-size: 1.9rem;
@@ -815,6 +815,125 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     color: var(--dark-font-color);
   }
 }
+
+/* About Partner Styles */
+#content .about-partner .banner {
+  padding: 0 7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .banner__scroll-down {
+    position: absolute;
+    bottom: 50px;
+    border-bottom: 0.5px solid var(--point-dark-color);
+    
+    span {
+      color: var(--dark-font-color);
+    }
+  }
+}
+.about-partner-banner .partner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+}
+.about-partner .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+.about-partner .text-container > h2 {
+  color: var(--dark-font-color);
+  padding: 2px 0;
+  font-family: "Crushed", sans-serif;
+  letter-spacing: 3px;
+  font-size: 2.3rem;
+  font-weight: 400;
+  border-top: 1.5px solid var(--point-middle-color);
+  border-bottom: 1.5px solid var(--point-middle-color);
+}
+.about-partner .partner-info {
+  width: 500px;
+  padding: 50px 70px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+}
+.about-partner .partner-info .partner-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  img {
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+  }
+}
+.partner-info .partner-profile .name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 7px;
+
+  h4, span {
+    color: var(--dark-font-color);
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  span {
+    font-size: 1.2rem;
+    padding-bottom: var(--little-font-padding);
+  }
+}
+.partner-info .partner-description {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    color: #555;
+    font-size: 1.1rem;
+  }
+}
+
+.about-partner .image-container {
+  /* border: 1px solid blue; */
+  position: relative;
+  width: 565px;
+  height: 395px;
+
+  img {
+    width: 550px;
+    height: 380px;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  div {
+    background-color: var(--dark-light-background-color);
+    width: 550px;
+    height: 380px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  img, div {
+    border-radius: 0 120px 0 0;
+  }
+}
+
 
 /* Footer Styles */
 #footer {
