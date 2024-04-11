@@ -111,10 +111,10 @@ body::-webkit-scrollbar-track,
 body input {
   display: none;
 }
-input:nth-of-type(1) ~ #content .trail-intro {
+input:nth-of-type(1) ~ #content #trail-intro {
   display: none;
 }
-input:nth-of-type(1):checked ~ #content .trail-intro {
+input:nth-of-type(1):checked ~ #content #trail-intro {
   display: block;
 }
 input:nth-of-type(1):checked ~ #main-header .tab-title label:nth-of-type(1) {
@@ -123,10 +123,10 @@ input:nth-of-type(1):checked ~ #main-header .tab-title label:nth-of-type(1) {
   text-underline-offset: var(--little-font-padding);
 }
 
-input:nth-of-type(2) ~ #content .trail-detail {
+input:nth-of-type(2) ~ #content #trail-detail {
   display: none;
 }
-input:nth-of-type(2):checked ~ #content .trail-detail {
+input:nth-of-type(2):checked ~ #content #trail-detail {
   display: block;
 }
 input:nth-of-type(2):checked ~ #main-header .tab-title label:nth-of-type(2) {
@@ -135,10 +135,10 @@ input:nth-of-type(2):checked ~ #main-header .tab-title label:nth-of-type(2) {
   text-underline-offset: var(--little-font-padding);
 }
 
-input:nth-of-type(3) ~ #content .about-me {
+input:nth-of-type(3) ~ #content #about-me {
   display: none;
 }
-input:nth-of-type(3):checked ~ #content .about-me {
+input:nth-of-type(3):checked ~ #content #about-me {
   display: block;
 }
 input:nth-of-type(3):checked ~ #main-header .tab-title label:nth-of-type(3) {
@@ -147,10 +147,10 @@ input:nth-of-type(3):checked ~ #main-header .tab-title label:nth-of-type(3) {
   text-underline-offset: var(--little-font-padding);
 }
 
-input:nth-of-type(4) ~ #content .about-partner {
+input:nth-of-type(4) ~ #content #about-partner {
   display: none;
 }
-input:nth-of-type(4):checked ~ #content .about-partner {
+input:nth-of-type(4):checked ~ #content #about-partner {
   display: block;
 }
 input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
@@ -170,7 +170,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
 /* Trail Intro Styles */
 /* Trail Intro - Banner */
-#content > .trail-intro > .banner {
+#content > #trail-intro > .banner {
   background: url("./images/intro_banner.png") #292e36;
   background-repeat: no-repeat;
   background-size: cover;
@@ -178,7 +178,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
   position: relative;
 }
-.trail-intro .banner .banner-text-container {
+#trail-intro .banner .banner-text-container {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -204,19 +204,19 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   border-bottom: 0.5px solid var(--point-color);
   font-size: 0.93rem;
 }
-#content .about-me .banner__scroll-down {
+#content #about-me .banner__scroll-down {
   border-bottom: 0.5px solid var(--point-dark-color);
 }
 
 /* Trail Intro - 나 & 서울특별시의 산책로 소개 */
-.trail-intro article {
+#trail-intro article {
   height: 80vh;
 }
-.trail-intro article:nth-of-type(2) {
+#trail-intro article:nth-of-type(2) {
   height: 100%;
 }
-.trail-intro .my-trail-outline,
-.trail-intro .seoul-trail-outline {
+#trail-intro .my-trail-outline,
+#trail-intro .seoul-trail-outline {
   padding: 5.5vw 8vw;
 
   display: flex;
@@ -224,23 +224,23 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   align-items: center;
   gap: 50px;
 }
-.trail-intro .my-trail-outline,
-.trail-detail .course-hyehwadoor {
+#trail-intro .my-trail-outline,
+#trail-detail .course-hyehwadoor {
   background-color: #ececd6;
 }
-.trail-intro .seoul-trail-outline,
-.trail-detail .course-naksan-park {
+#trail-intro .seoul-trail-outline,
+#trail-detail .course-naksan-park {
   background-color: #f0dede;
 }
-.trail-detail .course-ihwa-mural-village {
+#trail-detail .course-ihwa-mural-village {
   background-color: #edd9f2;
 }
-.trail-detail .course-heunginjimun {
+#trail-detail .course-heunginjimun {
   background-color: #cbe3e3;
 }
 
-.trail-intro .outline-text-container,
-.trail-detail .course-text-container {
+#trail-intro .outline-text-container,
+#trail-detail .course-text-container {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -253,13 +253,13 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     color: #555;
   }
 }
-.trail-intro .outline__title-container {
+#trail-intro .outline__title-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.trail-intro article .outline__title {
+#trail-intro article .outline__title {
   color: var(--dark-font-color);
   font-size: 1.7rem;
   font-weight: 700;
@@ -289,21 +289,21 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   color: var(--point-dark-color);
 }
 
-.trail-intro article .vertical-line {
+#trail-intro article .vertical-line {
   width: 1px;
   height: 360px;
   background-color: #93b0b6;
 }
 
-.trail-intro article .outline__image {
+#trail-intro article .outline__image {
   height: 380px;
   border-radius: 15px;
   object-fit: cover;
 }
 
 /* Trail Intro - 산책로 선정 이유 */
-.trail-intro .selection-reason,
-.trail-detail .course-tip {
+#trail-intro .selection-reason,
+#trail-detail .course-tip {
   padding: 70px 10vw;
   background-color: var(--dark-light-background-color); /*#414650*/
   text-align: center;
@@ -343,7 +343,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
 /* Trail Detail Styles */
 /* Trail Detail - Banner */
-#content .trail-detail > .banner {
+#content #trail-detail > .banner {
   padding: 2vw 5.5vw;
   background-color: var(--dark-background-color);
 
@@ -378,7 +378,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 
 /* Trail Detail - 시작/종료 위치 및 개방 시간 */
-.trail-detail .trail-info {
+#trail-detail .trail-info {
   display: flex;
   flex-direction: column;
   background-color: var(--dark-light-background-color);
@@ -398,12 +398,12 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     height: 45px;
   }
 }
-.trail-detail .info-container > div {
+#trail-detail .info-container > div {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-.trail-detail .info-container .info__text-container {
+#trail-detail .info-container .info__text-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -429,7 +429,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 
 /* Trail Detail - 각 구간 */
-.trail-detail .course-container {
+#trail-detail .course-container {
   padding: 5.5vw 15vw;
 
   display: flex;
@@ -458,25 +458,25 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     text-underline-offset: var(--little-font-padding);
   }
 }
-.trail-detail .course-container .course__image {
+#trail-detail .course-container .course__image {
   height: 210px;
   border-radius: 15px;
   object-fit: cover;
 }
-.trail-detail .course-container .vertical-line {
+#trail-detail .course-container .vertical-line {
   width: 1px;
   height: 190px;
   background-color: #93b0b6;
 }
-.trail-detail .course-naksan-park .course__image {
+#trail-detail .course-naksan-park .course__image {
   height: 230px;
 }
-.trail-detail .course-naksan-park .vertical-line {
+#trail-detail .course-naksan-park .vertical-line {
   height: 210px;
 }
 
 /* Trail Detail - Course Path Styles */
-.trail-detail .course-path {
+#trail-detail .course-path {
   padding: 3.5vw 15vw;
   width: 100%;
 
@@ -517,7 +517,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     font-size: 1rem;
   }
 }
-.trail-detail .course-path .course__title {
+#trail-detail .course-path .course__title {
   font-size: 1.7rem;
   font-weight: 700;
   color: var(--dark-font-color);
@@ -526,12 +526,12 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   text-decoration-color: var(--point-dark-color);
   text-underline-offset: var(--big-font-padding);
 }
-.trail-detail .course-path .course__subtitle {
+#trail-detail .course-path .course__subtitle {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--dark-font-color);
 }
-.trail-detail .course-path .course__image-container {
+#trail-detail .course-path .course__image-container {
   padding: 15px 0;
   width: 100%;
   display: flex;
@@ -642,7 +642,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
 /* About Me Styles */
 /* About Me - Banner Styles */
-#content .about-me .banner {
+#content #about-me .banner {
   padding: 0 16vw;
   background-color: #f1e5e0;
 
@@ -763,7 +763,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 
 /* About Me - Cards Style */
-.about-me .about-me-detail {
+#about-me .about-me-detail {
   background-color: var(--dark-light-background-color);
   padding: 3.5vw 10vw;
   display: flex;
@@ -818,7 +818,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
 /* About Partner Styles */
 /* About Partner - Banner Styles */
-#content .about-partner .banner {
+#content #about-partner .banner {
   padding: 0 7vw;
   display: flex;
   flex-direction: column;
@@ -841,14 +841,14 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   align-items: center;
   gap: 70px;
 }
-.about-partner .text-container {
+#about-partner .text-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 35px;
 }
-.about-partner .text-container > h2 {
+#about-partner .text-container > h2 {
   padding: 2px 0;
   font-family: "Crushed", sans-serif;
   color: var(--dark-font-color);
@@ -860,7 +860,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   border-bottom: 1.5px solid var(--point-color);
 }
 
-.about-partner .partner-info {
+#about-partner .partner-info {
   width: 500px;
   padding: 50px 70px;
   background-color: #fff;
@@ -871,7 +871,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 }
-.about-partner .partner-info .partner-profile {
+#about-partner .partner-info .partner-profile {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -911,7 +911,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   }
 }
 
-.about-partner .image-container {
+#about-partner .image-container {
   position: relative;
   width: 560px;
   height: 390px;
@@ -940,7 +940,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 
 /* About Partner - Interview Styles */
-.about-partner .partner-interview {
+#about-partner .partner-interview {
   padding: 3.5vw 13vw;
   display: flex;
   flex-direction: column;
@@ -959,7 +959,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     font-weight: 700;
   }
 }
-.about-partner .partner-interview .card-container {
+#about-partner .partner-interview .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
