@@ -1011,7 +1011,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   padding: 0 5.5vw;
   background-color: var(--dark-light-background-color);
 
-  border-top: 1px solid var(--dark-font-color);
+  border-top: 1px solid var(--point-dark-color);
 
   display: flex;
   justify-content: center;
