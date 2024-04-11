@@ -80,13 +80,53 @@ function setCTime() {
 function changeimage() {
   var img = document.getElementById("cat-image");
   var arr = img.src.split("/");
-  fileStr = arr[arr.length-1];
+  fileStr = arr[arr.length - 1];
 
   if (fileStr == "cat.png") {
     img.src = "./images/cat2.jpg";
   } else {
     img.src = "./images/cat.png";
   }
+}
+
+var colorNames = [
+  "maroon",
+  "red",
+  "orange",
+  "yellow",
+  "olive",
+  "purple",
+  "fuchsia",
+  "white",
+  "lime",
+  "green",
+  "navy",
+  "blue",
+  "aqua",
+  "teal",
+  "black",
+  "silver",
+  "gray",
+];
+
+function createColorTable() {
+  var colorTable = document.getElementById("colorTable");
+
+  for (var i = 0; i < colorNames.length; i++) {
+    var ctbox = document.createElement("div");
+    ctbox.className = "ctbox";
+    ctbox.style.display = "inline-block";
+    ctbox.style.width = "60px";
+    ctbox.style.padding = "10px";
+    ctbox.style.backgroundColor = colorNames[i];
+    ctbox.innerText = colorNames[i];
+    colorTable.append(ctbox);
+  }
+}
+
+function removeColorTable() {
+  var colorTable = document.getElementById("colorTable");
+  colorTable.innerHTML = "";
 }
 
 /* Hangman */
@@ -119,7 +159,7 @@ function guessLetter() {
   ) {
     return;
   }
-  
+
   guesses += letter;
   if (word.indexOf(letter) < 0) {
     guessCount--;

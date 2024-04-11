@@ -81,9 +81,17 @@
         </form>
       </div>
 
+      <!-- 사진 바꾸기 -->
       <div class="lab">
         <img src="./images/cat.png" alt="고양이 사진" id="cat-image">
         <button onclick="changeimage();">사진 바꾸기</button>
+      </div>
+
+      <div class="lab">
+        <h3>색상 테이블 출력하기</h3>
+        <input type="button" id="ctCreate" value="출력하기" onclick="createColorTable()">
+        <input type="button" id="ctRemove" value="없애기" onclick="removeColorTable()">
+        <div id="colorTable"></div>
       </div>
     </div>
     <div id="hangman">
