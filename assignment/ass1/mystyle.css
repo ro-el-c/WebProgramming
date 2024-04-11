@@ -79,7 +79,7 @@ body::-webkit-scrollbar-track,
   color: #fff;
   border-bottom: 1px solid var(--point-dark-color);
 
-  z-index: 1;
+  z-index: 100;
 }
 
 #main-header .tab-title {
@@ -816,7 +816,6 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   }
 }
 
-
 /* About Partner Styles */
 /* About Partner - Banner Styles */
 #content .about-partner .banner {
@@ -826,11 +825,14 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   justify-content: center;
   align-items: center;
 
-  background-color: var(--dark-background-color);
-
   .banner__scroll-down {
     position: absolute;
     bottom: 50px;
+    border-bottom: 0.5px solid var(--point-dark-color);
+
+    span {
+      color: var(--dark-font-color);
+    }
   }
 }
 .about-partner-banner .partner-container {
@@ -849,7 +851,7 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 .about-partner .text-container > h2 {
   padding: 2px 0;
   font-family: "Crushed", sans-serif;
-  color: var(--font-color);
+  color: var(--dark-font-color);
   letter-spacing: 3px;
   font-size: 2.3rem;
   font-weight: 400;
@@ -861,13 +863,13 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 .about-partner .partner-info {
   width: 500px;
   padding: 50px 70px;
-  background-color: #FFF;
+  background-color: #fff;
 
   display: flex;
   flex-direction: column;
   gap: 30px;
 
-  box-shadow:  0px 0px 33px 0px rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 }
 .about-partner .partner-info .partner-profile {
   display: flex;
@@ -886,7 +888,8 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   align-items: start;
   gap: 7px;
 
-  h4, span {
+  h4,
+  span {
     color: var(--dark-font-color);
   }
   h4 {
@@ -909,7 +912,6 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 }
 
 .about-partner .image-container {
-  /* border: 1px solid blue; */
   position: relative;
   width: 560px;
   height: 390px;
@@ -924,19 +926,84 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     z-index: 1;
   }
   div {
-    /* background-color: var(--dark-light-background-color); */
-    background-color: var(--font-color);
+    background-color: var(--dark-light-background-color);
     width: 550px;
     height: 380px;
     position: absolute;
     right: 0;
     top: 0;
   }
-  img, div {
+  img,
+  div {
     border-radius: 0 120px 0 0;
   }
 }
 
+/* About Partner - Interview Styles */
+.about-partner .partner-interview {
+  padding: 3.5vw 13vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: var(--dark-light-background-color);
+
+  h3 {
+    font-family: "Crushed", sans-serif;
+    letter-spacing: 3px;
+    padding-bottom: var(--little-font-padding);
+    border-bottom: 1px solid var(--point-color);
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+}
+.about-partner .partner-interview .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.partner-interview .card-container .card {
+  padding: 25px 40px;
+  width: 480px;
+  height: 340px;
+
+  border: 1px solid var(--point-middle-color);
+  background-color: var(--dark-light-background-color);
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  h6,
+  span {
+    color: var(--point-color);
+  }
+  h6 {
+    padding-bottom: 25px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  span {
+    padding-top: 25px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+.partner-interview .card-container .vertical-line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--point-color);
+}
 
 /* Footer Styles */
 #footer {
