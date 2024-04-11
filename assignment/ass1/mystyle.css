@@ -816,7 +816,9 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   }
 }
 
+
 /* About Partner Styles */
+/* About Partner - Banner Styles */
 #content .about-partner .banner {
   padding: 0 7vw;
   display: flex;
@@ -824,14 +826,11 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   justify-content: center;
   align-items: center;
 
+  background-color: var(--dark-background-color);
+
   .banner__scroll-down {
     position: absolute;
     bottom: 50px;
-    border-bottom: 0.5px solid var(--point-dark-color);
-    
-    span {
-      color: var(--dark-font-color);
-    }
   }
 }
 .about-partner-banner .partner-container {
@@ -848,24 +847,27 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
   gap: 35px;
 }
 .about-partner .text-container > h2 {
-  color: var(--dark-font-color);
   padding: 2px 0;
   font-family: "Crushed", sans-serif;
+  color: var(--font-color);
   letter-spacing: 3px;
   font-size: 2.3rem;
   font-weight: 400;
-  border-top: 1.5px solid var(--point-middle-color);
-  border-bottom: 1.5px solid var(--point-middle-color);
+
+  border-top: 1.5px solid var(--point-color);
+  border-bottom: 1.5px solid var(--point-color);
 }
+
 .about-partner .partner-info {
   width: 500px;
   padding: 50px 70px;
+  background-color: #FFF;
 
   display: flex;
   flex-direction: column;
   gap: 30px;
 
-  box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+  box-shadow:  0px 0px 33px 0px rgba(255, 255, 255, 0.6);
 }
 .about-partner .partner-info .partner-profile {
   display: flex;
@@ -909,8 +911,8 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
 .about-partner .image-container {
   /* border: 1px solid blue; */
   position: relative;
-  width: 565px;
-  height: 395px;
+  width: 560px;
+  height: 390px;
 
   img {
     width: 550px;
@@ -922,7 +924,8 @@ input:nth-of-type(4):checked ~ #main-header .tab-title label:nth-of-type(4) {
     z-index: 1;
   }
   div {
-    background-color: var(--dark-light-background-color);
+    /* background-color: var(--dark-light-background-color); */
+    background-color: var(--font-color);
     width: 550px;
     height: 380px;
     position: absolute;
