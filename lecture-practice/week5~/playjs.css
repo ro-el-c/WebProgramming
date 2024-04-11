@@ -106,3 +106,9 @@ td {
   font-size: 2em;
   padding: 1em;
 }
+
+#cat-image {
+  object-fit: cover;
+  width: 400px;
+  height: 300px;
+}

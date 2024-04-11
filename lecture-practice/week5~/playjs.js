@@ -77,6 +77,17 @@ function setCTime() {
   ); /* 한 번 실행하는 타이머 funtion(만료 뒤 실행할 함수) */
 }
 
+function changeimage() {
+  var img = document.getElementById("cat-image");
+  var arr = img.src.split("/");
+  fileStr = arr[arr.length-1];
+
+  if (fileStr == "cat.png") {
+    img.src = "./images/cat2.jpg";
+  } else {
+    img.src = "./images/cat.png";
+  }
+}
 
 /* Hangman */
 //constans
