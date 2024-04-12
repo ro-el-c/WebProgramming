@@ -13,19 +13,21 @@
   --warning-color: #ff8331;
   --location-color: #a164d6;
   --location-light-color: #c98cff;
+  --korean-default-font: "IBM Plex Sans KR", sans-serif;
+  --english-default-font: "Josefin Sans", sans-serif;
 }
 
 /* CSS 초기화 */
 * {
   margin: 0;
   padding: 0;
-  font-family: "IBM Plex Sans KR", sans-serif;
+  font-family: var(--korean-default-font);
   box-sizing: border-box;
   color: var(--font-color);
   font-style: normal;
 }
 .eng {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: var(--english-default-font);
 }
 li {
   list-style: none;
