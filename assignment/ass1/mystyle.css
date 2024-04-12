@@ -107,7 +107,7 @@ body::-webkit-scrollbar-track,
   padding-top: var(--little-font-padding);
 }
 
-/* Tab Bar Styles */
+/* Navigation Bar(Tab Bar) Styles */
 body input {
   display: none;
 }
