@@ -120,7 +120,7 @@ function createColorTable() {
     ctbox.style.padding = "10px";
     ctbox.style.backgroundColor = colorNames[i];
     ctbox.innerText = colorNames[i];
-    colorTable.append(ctbox);
+    colorTable.appendChild(ctbox);
   }
 }
 
