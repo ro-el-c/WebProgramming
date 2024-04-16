@@ -2,6 +2,23 @@ window.onload = setCTime;
 /* event handler; 동작, 즉 함수 자체가 와야 함;
 !!! 따라서, 뒤에 괄호가 있으면 안 됨 !!! */
 
+/* setInterval 실습 */
+var intervalId;
+function changeColor() {
+  intervalId = setInterval(fleshText, 1000);
+  function fleshText() {
+    var target = document.getElementById("target");
+    target.style.backgroundColor = target.style.backgroundColor == "green" ? "yellow" : "green";
+    target.style.color = target.style.color == "red" ? "blue" : "red";
+  }
+}
+//괄호가 있으면 함수 실행
+//괄호 없으면 함수 자체를 가져오는 것
+//changeColot(fleshText, 1000) 에서 괄호가 없기 때문에 fleshText 함수 자체가 괄호 안에 있는 것과 동일
+function stopTextColor() {
+  clearInterval(intervalId);
+}
+
 function calc() {
   var x = parseInt(document.getElementById("x").value);
   var y = parseInt(document.getElementById("y").value);
@@ -149,13 +166,13 @@ function removeColorTable() {
   //   colorTable.removeChild(child[i]);
   // }
   //2
-  // while (child[0]) {
-  //   colorTable.removeChild(child[0]);
-  // }
-  //3
-  while (colorTable.hasChildNodes) {
-    colorTable.removeChild(colorTable.firstChild);
+  while (child[0]) {
+    colorTable.removeChild(child[0]);
   }
+  //3
+  // while (colorTable.hasChildNodes) {
+  //   colorTable.removeChild(colorTable.firstChild);
+  // }
 }
 
 /* Hangman */

@@ -9,7 +9,7 @@
     <script src="playjs.js"></script>
     <title>Document</title>
   </head>
-  <body>
+  <body onload="changeColor();">
     <header>
       <div id="title">Play with JS!</div>
       <div id="ctime"></div>
@@ -23,6 +23,13 @@
       </nav>
     </header>
     <div id="content">
+      <div class="lab">
+        <div id="target">
+          This is a Text.
+        </div>
+        <button onclick="stopTextColor();">중지</button>
+      </div>
+
       <!-- 덧셈 계산기 -->
       <div class="lab">
         <h3>덧셈 계산기</h3>
