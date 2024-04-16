@@ -114,12 +114,13 @@ function createColorTable() {
 
   for (var i = 0; i < colorNames.length; i++) {
     var ctbox = document.createElement("div");
-    ctbox.className = "ctbox";
+    ctbox.setAttribute("class", "ctbox");
+    // ctbox.className = "ctbox";
     ctbox.style.display = "inline-block";
     ctbox.style.width = "60px";
     ctbox.style.padding = "10px";
     ctbox.style.backgroundColor = colorNames[i];
-    ctbox.innerText = colorNames[i];
+    ctbox.innerHTML = colorNames[i];
     colorTable.appendChild(ctbox);
   }
   //forEach 사용 가능
@@ -137,7 +138,23 @@ function createColorTable() {
 
 function removeColorTable() {
   var colorTable = document.getElementById("colorTable");
-  colorTable.innerHTML = "";
+  // colorTable.innerHTML = "";
+
+  // var child = colorTable.getElementsByTagName("div");
+  // var child = colorTable.getElementsByClassName("ctbox");
+  var child = colorTable.childNodes; //DOM 모델의 속성 값으로 가져오기
+  //1
+  // for (var i = child.length - 1; i >= 0; i--) {
+  //   colorTable.removeChild(child[i]);
+  // }
+  //2
+  // while (child[0]) {
+  //   colorTable.removeChild(child[0]);
+  // }
+  //3
+  while (colorTable.hasChildNodes) {
+    colorTable.removeChild(colorTable.firstChild);
+  }
 }
 
 /* Hangman */
