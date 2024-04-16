@@ -23,11 +23,19 @@
       </nav>
     </header>
     <div id="content">
+      <!-- 주기 실행 -->
       <div class="lab">
-        <div id="target">
-          This is a Text.
-        </div>
+        <div id="target">This is a Text.</div>
         <button onclick="stopTextColor();">중지</button>
+      </div>
+
+      <!-- 상자 이동하기 -->
+      <div class="lab">
+        <h3>상자 이동하기</h3>
+        <p><button onclick="myMove();">Click Me</button></p>
+        <div id="container">
+          <div id="animate"></div>
+        </div>
       </div>
 
       <!-- 덧셈 계산기 -->
@@ -90,15 +98,25 @@
 
       <!-- 사진 바꾸기 -->
       <div class="lab">
-        <img src="./images/cat.png" alt="고양이 사진" id="cat-image">
+        <img src="./images/cat.png" alt="고양이 사진" id="cat-image" />
         <button onclick="changeimage();">사진 바꾸기</button>
       </div>
 
       <!-- color box -->
       <div class="lab">
         <h3>색상 테이블 출력하기</h3>
-        <input type="button" id="ctCreate" value="출력하기" onclick="createColorTable()">
-        <input type="button" id="ctRemove" value="없애기" onclick="removeColorTable()">
+        <input
+          type="button"
+          id="ctCreate"
+          value="출력하기"
+          onclick="createColorTable()"
+        />
+        <input
+          type="button"
+          id="ctRemove"
+          value="없애기"
+          onclick="removeColorTable()"
+        />
         <div id="colorTable"></div>
       </div>
     </div>

@@ -19,6 +19,24 @@ function stopTextColor() {
   clearInterval(intervalId);
 }
 
+/* 상자 이동하기 */
+function myMove() {
+  var animate = document.getElementById("animate");
+
+  var moveInterval = setInterval(moveBox, 5);
+  var position = 0;
+
+  function moveBox() {
+    if (position == 350) {
+      clearInterval(moveInterval);
+    } else {
+      position++;
+      animate.style.top = `${position}px`;
+      animate.style.left = `${position}px`;
+    }
+  }
+}
+
 function calc() {
   var x = parseInt(document.getElementById("x").value);
   var y = parseInt(document.getElementById("y").value);
