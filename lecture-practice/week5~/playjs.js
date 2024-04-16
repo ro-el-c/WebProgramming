@@ -109,6 +109,7 @@ var colorNames = [
   "gray",
 ];
 
+/* color box create/remove */
 function createColorTable() {
   var colorTable = document.getElementById("colorTable");
 
