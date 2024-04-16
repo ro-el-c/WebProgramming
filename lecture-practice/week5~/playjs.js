@@ -122,6 +122,17 @@ function createColorTable() {
     ctbox.innerText = colorNames[i];
     colorTable.appendChild(ctbox);
   }
+  //forEach 사용 가능
+  // colorNames.forEach(colorName => {
+  //   var ctbox = document.createElement("div");
+  //   ctbox.className = "ctbox";
+  //   ctbox.style.display = "inline-block";
+  //   ctbox.style.width = "60px";
+  //   ctbox.style.padding = "10px";
+  //   ctbox.style.backgroundColor = colorName;
+  //   ctbox.innerText = colorName;
+  //   colorTable.appendChild(ctbox);
+  // })
 }
 
 function removeColorTable() {
