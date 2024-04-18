@@ -7,20 +7,72 @@
         var form = document.myform; //document 안에 name이 myfrom인 태그
         var id = form["user-id"].value; //name 속성 값이 id인 객체
         var name = form["user-name"].value;
+        var pwd = form["user-password"].value;
         var gender = form["gender"].value;
         var cell =
           form["phone1"].value + form["phone2"].value + form["phone3"].value;
         var address = form["user-address"].value;
         var hobby = "";
-        for (var i = 1; i <= 4; i++) {
-          if (form["hobby" + i].checked) {
-            hobby += form["hobby" + i].value + " ";
+        
+        if(id.length <= 0) {
+          alert("아이디를 입력하세요.");
+          return false;
+        }
+        if(name.length <= 0) {
+          alert("이름을 입력하세요.");
+          return false;
+        }
+        if(pwd.length <= 0) {
+          alert("비밀번호를 입력하세요.");
+          return false;
+        }
+        if(id.length < 6) {
+          alert("6자 이상의 아이디를 입력하세요.");
+          return false;
+        }
+        if(pwd.length < 6) {
+          alert("6자 이상의 비밀번호를 입력하세요.");
+          return false;
+        }
+        if(checkPwd(pwd)) {
+          return true;
+        } else {
+          for (var i = 1; i <= 4; i++) {
+            if (form["hobby" + i].checked) {
+              hobby += form["hobby" + i].value + " ";
+            }
           }
         }
+        
         var str = id + "\n" + name + "\n" + gender + "\n";
         str += cell + "\n" + address + "\n" + hobby;
         alert(str);
+
+        function checkPwd(pwd) {
+          //정규표현식
+          var pwdNumExp = /[0-9]+/;
+          var pwdEngExp = /[a-zA-Z]+/;
+          var pwdElseExp = /[@#$]+/;
+          var pwdNoneExp = /[`~!%^&*|\\\'\";:\/?]+/;
+
+          if(!pwdNumExp.test(pwd)) {
+            alert("비밀번호는 숫자를 포함해야 합니다.");
+            return false;
+          } else if (!pwdEngExp.test(pwd)) {
+            alert("비밀번호는 영어를 포함해야 합니다.");
+            return false;
+          } else if (!pwdElseExp.test(pwd)) {
+            alert("비밀번호는 특수 문자 @, #, $ 중 하나를 반드시 포함해야 합니다.");
+            return false;
+          } else if (pwdNoneExp.test(pwd)) {
+            alert("비밀번호는 특수 문자 `, ~, !, %, ^, &, *, |, \\, ', \", ;, :, /, ?를 포함할 수 없습니다.");
+            return false;
+          } else {
+            return true;
+          }
+        }
       }
+
     </script>
     <title>HTML</title>
     <style>
