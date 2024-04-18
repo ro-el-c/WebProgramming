@@ -1,6 +1,38 @@
-window.onload = setCTime;
+window.onload = pageLoad;
 /* event handler; 동작, 즉 함수 자체가 와야 함;
 !!! 따라서, 뒤에 괄호가 있으면 안 됨 !!! */
+
+function pageLoad() {
+  setCTime();
+  changeColor();
+
+  var stopBtn = document.getElementById("stop-btn");
+  stopBtn.onclick = stopTextColor;
+
+  var moveBoxBtn = document.getElementById("move-box");
+  moveBoxBtn.onclick = myMove;
+
+  var sumBtn = document.getElementById("sum-btn");
+  sumBtn.onclick = calc;
+
+  var check = document.getElementById("check");
+  check.onclick = guess;
+  var restart = document.getElementById("restart");
+  restart.onclick = replay;
+
+  var changeImgBtn = document.getElementById("change-img-btn");
+  changeImgBtn.onclick = changeimage;
+
+  var ctCreate = document.getElementById("ctCreate");
+  ctCreate.onclick = createColorTable;
+  var ctRemove = document.getElementById("ctRemove");
+  ctRemove.onclick = removeColorTable;
+
+  var guessBtn = document.getElementById("guessbutton");
+  guessBtn.onclick = guessLetter;
+  var newGameArea = document.getElementById("newgamearea");
+  newGameArea.onclick = newGame;
+}
 
 /* setInterval 실습 */
 var intervalId;
@@ -8,7 +40,8 @@ function changeColor() {
   intervalId = setInterval(fleshText, 1000);
   function fleshText() {
     var target = document.getElementById("target");
-    target.style.backgroundColor = target.style.backgroundColor == "green" ? "yellow" : "green";
+    target.style.backgroundColor =
+      target.style.backgroundColor == "green" ? "yellow" : "green";
     target.style.color = target.style.color == "red" ? "blue" : "red";
   }
 }
@@ -103,7 +136,7 @@ function setCTime() {
     " : " +
     now.getMinutes() +
     " : " +
-    String(now.getSeconds()).padStart(2, "0");
+    now.getSeconds();
 
   document.getElementById("ctime").innerHTML = data;
   setTimeout(

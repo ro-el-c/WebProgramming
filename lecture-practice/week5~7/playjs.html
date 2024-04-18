@@ -9,7 +9,7 @@
     <script src="playjs.js"></script>
     <title>Document</title>
   </head>
-  <body onload="changeColor();">
+  <body>
     <header>
       <div id="title">Play with JS!</div>
       <div id="ctime"></div>
@@ -26,13 +26,13 @@
       <!-- 주기 실행 -->
       <div class="lab">
         <div id="target">This is a Text.</div>
-        <button onclick="stopTextColor();">중지</button>
+        <button id="stop-btn">중지</button>
       </div>
 
       <!-- 상자 이동하기 -->
       <div class="lab">
         <h3>상자 이동하기</h3>
-        <p><button onclick="myMove();">Click Me</button></p>
+        <p><button id="move-box">Click Me</button></p>
         <div id="container">
           <div id="animate"></div>
         </div>
@@ -48,7 +48,7 @@
           <input id="y" /><br />
           합계:
           <input id="sum" /><br />
-          <input type="button" value="계산" onclick="calc();" />
+          <input type="button" value="계산" id="sum-btn" />
         </form>
       </div>
 
@@ -85,8 +85,8 @@
         <form>
           숫자:
           <input type="text" id="user" size="5" />
-          <input type="button" value="확인" onclick="guess();" />
-          <input type="button" value="다시 시작" onclick="replay();" />
+          <input type="button" value="확인" id="check" />
+          <input type="button" value="다시 시작" id="restart" />
           <br /><br />
           추측 횟수:
           <input type="text" id="guesses" size="5" />
@@ -99,24 +99,14 @@
       <!-- 사진 바꾸기 -->
       <div class="lab">
         <img src="./images/cat.png" alt="고양이 사진" id="cat-image" />
-        <button onclick="changeimage();">사진 바꾸기</button>
+        <button id="change-img-btn">사진 바꾸기</button>
       </div>
 
       <!-- color box -->
       <div class="lab">
         <h3>색상 테이블 출력하기</h3>
-        <input
-          type="button"
-          id="ctCreate"
-          value="출력하기"
-          onclick="createColorTable()"
-        />
-        <input
-          type="button"
-          id="ctRemove"
-          value="없애기"
-          onclick="removeColorTable()"
-        />
+        <input type="button" id="ctCreate" value="출력하기" />
+        <input type="button" id="ctRemove" value="없애기" />
         <div id="colorTable"></div>
       </div>
     </div>
@@ -129,12 +119,10 @@
       <div id="clue">Press New Game to play!</div>
       <div>
         <input type="text" id="hguess" size="1" maxlength="1" />
-        <button id="guessbutton" onclick="guessLetter();" disabled="disabled">
-          Guess
-        </button>
+        <button id="guessbutton" disabled="disabled">Guess</button>
       </div>
       <div id="newgamearea">
-        <button onclick="newGame();">New Game</button>
+        <button>New Game</button>
       </div>
       <div id="guessstr"></div>
     </div>
