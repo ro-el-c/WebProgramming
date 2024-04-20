@@ -70,6 +70,7 @@ function myMove() {
   }
 }
 
+/* 덧셈 계산기 */
 function calc() {
   var x = parseInt(document.getElementById("x").value);
   var y = parseInt(document.getElementById("y").value);
@@ -77,6 +78,7 @@ function calc() {
   result.value = x + y;
 }
 
+/* 숫자 맞추기 */
 function getRandomNum1to100() {
   return Math.floor(Math.random() * 100 + 1);
 }
@@ -110,6 +112,7 @@ function replay() {
   document.getElementById("computer-num").value = computerNumber;
 }
 
+/* 헤더 시간 표시 */
 function setCTime() {
   var months = [
     "January",
@@ -145,6 +148,7 @@ function setCTime() {
   ); /* 한 번 실행하는 타이머 funtion(만료 뒤 실행할 함수) */
 }
 
+/* 이미지 바꾸기 */
 function changeimage() {
   var img = document.getElementById("cat-image");
   var arr = img.src.split("/");
@@ -157,6 +161,7 @@ function changeimage() {
   }
 }
 
+/* color box create/remove */
 var colorNames = [
   "maroon",
   "red",
@@ -177,7 +182,6 @@ var colorNames = [
   "gray",
 ];
 
-/* color box create/remove */
 function createColorTable() {
   var colorTable = document.getElementById("colorTable");
 
