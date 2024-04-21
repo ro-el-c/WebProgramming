@@ -2,6 +2,8 @@ window.onload = pageLoad;
 /* event handler; 동작, 즉 함수 자체가 와야 함;
 !!! 따라서, 뒤에 괄호가 있으면 안 됨 !!! */
 
+
+//unobtrusive JS, 이벤트 핸들러 HTML 코드에서 완전 제거
 function pageLoad() {
   setCTime();
   changeColor();
