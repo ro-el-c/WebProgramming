@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bouncing Ball Example</title>
+    <style>
+      canvas {
+        background: yellow;
+        border: 1px dotted black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="300" height="200"></canvas>
+    <script>
+      //빨간 공 반지름 20
+      //시작 위치 100, 100
+      //이동 간격 5, 5
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var ballRadius = 20;
+      var x = 100;
+      var y = 100;
+      var dx = 5;
+      var dy = 5;
+      var ball = setInterval(draw, 10);
+
+      function draw() {
+        context.clearRect(0, 0, 300, 200); //주석처리하면 궤적이 모두 남음
+
+        drawBall();
+
+        if (x <= (0 + ballRadius) || x >= (300 - ballRadius)) { //공의 반지름 고려
+          dx *= -1;
+        }
+        if (y <= (0 + ballRadius) || y >= (200 - ballRadius)) {
+          dy *= -1;
+        }
+
+        x += dx;
+        y += dy;
+      }
+
+      function drawBall() {
+        context.beginPath();
+        context.arc(x, y, ballRadius, 0, 2.0 * Math.PI, true);
+        context.fillStyle = "red";
+        context.fill();
+      }
+
+      function stopBall() {
+        clearInterval(ball);
+      }
+    </script>
+    <button id="stopball" onclick="stopBall();">stop</button>
+  </body>
+</html>
