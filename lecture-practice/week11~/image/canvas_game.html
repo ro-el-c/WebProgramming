@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Example</title>
+    <style>
+      canvas {
+        border: 1px dotted red;
+        background-color: #fcff00;
+      }
+    </style>
+    <script src="./canvas_game.js"></script>
+  </head>
+  <body onload="init();">
+    <canvas id="canvas" width="500" height="300"></canvas>
+    <div id="control">
+      속도<input type="number" id="velocity" value="30" min="0" max="100" step="1">
+      각도<input type="number" id="angle" value="45" min="0" max="90" step="1">
+      <div id="score">점수 = 0</div>
+      <button onclick="start();">발사</button>
+    </div>
+  </body>
+</html>
