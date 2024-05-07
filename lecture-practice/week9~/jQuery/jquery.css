@@ -96,3 +96,8 @@ div.out p {
   border: 2px solid red;
   border-radius: 10px;
 }
+
+#off_test {
+  color: red;
+  background-color: yellow;
+}

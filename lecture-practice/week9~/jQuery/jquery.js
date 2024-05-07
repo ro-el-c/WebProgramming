@@ -19,10 +19,25 @@ $(document).ready(function () {
     },
     maxopen
   );
+
+  //--------------
+  $("#bind").click(function () {
+    $("body").on("click", "#theone", flash).find("#theone").text("Can Click!");
+  });
+  $("#unbind").click(function () {
+    $("body")
+      .off("click", "#theone", flash)
+      .find("#theone")
+      .text("Does nothing...");
+  });
 });
 
 function maxopen(event) {
   var maxwindow = window.open(event.data.url, "", event.data.winattributes);
   maxwindow.moveTo(0, 0);
   maxwindow.resizeBy(screen.availWidth, screen.availHeight);
-};
+}
+//-------------------
+function flash() {
+  $("#off_test").show().fadeOut("slow");
+}
