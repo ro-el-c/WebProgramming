@@ -49,14 +49,44 @@
       <div class="lab">
         <h3>이미지 변경하기</h3>
         <div id="imageArea">
-          <img id="image" src="img1.jpg" alt="cat" width="240">
+          <img id="image" src="img1.jpg" alt="cat" width="240" />
         </div>
       </div>
       <div class="lab">
         <h3>사진 앨범</h3>
         <div>
-          <img id="imgAlbum" width="250" height="250">
+          <img id="imgAlbum" width="250" height="250" />
         </div>
+      </div>
+      <div class="lab" id="schedule">
+        <div id="schedule_header">
+          <h2>스케줄 노트</h2>
+          <div id="add_img">
+            <img src="plus_img.jpg" width="30" />
+          </div>
+        </div>
+        <div id="note_form">
+          <table>
+            <tr>
+              <td>제목:</td>
+              <td><input id="note_title" type="text" /></td>
+            </tr>
+            <tr>
+              <td>날짜:</td>
+              <td><input type="text" id="note_date" /></td>
+            </tr>
+            <tr>
+              <td>내용:</td>
+              <td><input type="text" id="note_content" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center">
+                <button id="add_note">확인</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="note"></div>
       </div>
     </div>
 

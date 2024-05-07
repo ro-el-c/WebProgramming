@@ -102,8 +102,24 @@ div.out p {
   background-color: yellow;
 }
 
+/* --------------------------------------------------------------- */
+#schedule_header {
+  overflow: hidden;
+  height: 50px;
+}
+#schedule_header h2 {
+  float: left;
+}
+#add_img {
+  float: right;
+}
+
+#note_form {
+  display: none;
+}
 
 /* --------------------------------------------------------------- */
+/* 내가 추가한 코드 */
 #imgAlbum {
   object-fit: cover;
 }
