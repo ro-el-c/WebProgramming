@@ -31,7 +31,7 @@ $(document).ready(function () {
       .text("Does nothing...");
   });
 
-  //-------------- ?? 왜 안 돼
+  //--------------
   $("#trigger_test button:first").click(function () {
     update($("#trigger_test div:first span"));
   });
@@ -39,6 +39,15 @@ $(document).ready(function () {
     $("#trigger_test button:first").trigger("click");
     update($("#trigger_test div:last span"));
   });
+
+  //--------------
+  $("#image").click(function() {
+    if($("#image").attr("src") == "cat.png") {
+      $("#image").attr("src", "cat2.jpg");
+    } else {
+      $("#image").attr("src", "cat.png");
+    }
+  })
 });
 
 function maxopen(event) {
