@@ -1,3 +1,5 @@
+var imgArray = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"];
+
 $(document).ready(function () {
   var i = 0;
   $("div.out")
@@ -41,15 +43,30 @@ $(document).ready(function () {
   });
 
   //--------------
-  $("#image").click(function() {
-    if($("#image").attr("src") == "cat.png") {
-      $("#image").attr("src", "cat2.jpg");
+  $("#image").click(function () {
+    if ($("#image").attr("src") == "img1.jpg") {
+      $("#image").attr("src", "img2.jpg");
     } else {
-      $("#image").attr("src", "cat.png");
+      $("#image").attr("src", "img1.jpg");
     }
-  })
-});
+  });
 
+  //--------------
+  var albumIdx = 0;
+  $("#imgAlbum").attr("src", imgArray[albumIdx++]);
+  $("#imgAlbum").click(function () {
+    albumIdx = (albumIdx + 1) % imgArray.length;
+    $("#imgAlbum").attr("src", imgArray[albumIdx]);
+  });
+  // $("#imgAlbum").attr("src", imgArray[albumIdx++]);
+  // $("#imgAlbum").click(
+  //   function () {
+  //     $("#imgAlbum").attr("src", imgArray[albumIdx++]);
+  //     if (albumIdx >= imgArray.length) {
+  //       albumIdx = 0;
+  //   }
+  // });
+});
 function maxopen(event) {
   var maxwindow = window.open(event.data.url, "", event.data.winattributes);
   maxwindow.moveTo(0, 0);

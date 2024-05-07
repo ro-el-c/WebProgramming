@@ -101,3 +101,9 @@ div.out p {
   color: red;
   background-color: yellow;
 }
+
+
+/* --------------------------------------------------------------- */
+#imgAlbum {
+  object-fit: cover;
+}
