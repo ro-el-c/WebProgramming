@@ -14,7 +14,7 @@ $(document).ready(function () {
     });
 
   $("#b1").on(
-    "click",
+    "click", // event handling with passing data
     {
       url: "https://www.google.com",
       winattributes: "resize=1, scrollbars=1, status=1",
@@ -22,7 +22,7 @@ $(document).ready(function () {
     maxopen
   );
 
-  //--------------
+  //-------------- on() & off()
   $("#bind").click(function () {
     $("body").on("click", "#theone", flash).find("#theone").text("Can Click!");
   });
@@ -33,7 +33,7 @@ $(document).ready(function () {
       .text("Does nothing...");
   });
 
-  //--------------
+  //-------------- trigger()
   $("#trigger_test button:first").click(function () {
     update($("#trigger_test div:first span"));
   });
@@ -42,7 +42,7 @@ $(document).ready(function () {
     update($("#trigger_test div:last span"));
   });
 
-  //--------------
+  //-------------- attr(), 이미지 변경
   $("#image").click(function () {
     if ($("#image").attr("src") == "img1.jpg") {
       $("#image").attr("src", "img2.jpg");
@@ -51,7 +51,7 @@ $(document).ready(function () {
     }
   });
 
-  //--------------
+  //-------------- attr(), 사진 앨범
   var albumIdx = 0;
   $("#imgAlbum").attr("src", imgArray[albumIdx++]);
   $("#imgAlbum").click(function () {
