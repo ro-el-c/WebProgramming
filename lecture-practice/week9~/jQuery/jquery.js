@@ -66,7 +66,17 @@ $(document).ready(function () {
   //       albumIdx = 0;
   //   }
   // });
+
+  //-------------- CSS Style 수정
+  var defaultFontSize = $(".main-menu").css("font-size");
+  $(".main-menu").mouseover(function () {
+    $(this).css({"font-size": 20, "background": "green"});
+  });
+  $(".main-menu").mouseout(function () {
+    $(this).css({"font-size": defaultFontSize, "background": "none"});
+  });
 });
+
 function maxopen(event) {
   var maxwindow = window.open(event.data.url, "", event.data.winattributes);
   maxwindow.moveTo(0, 0);
