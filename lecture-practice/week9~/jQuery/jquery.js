@@ -30,6 +30,15 @@ $(document).ready(function () {
       .find("#theone")
       .text("Does nothing...");
   });
+
+  //-------------- ?? 왜 안 돼
+  $("#trigger_test button:first").click(function () {
+    update($("#trigger_test div:first span"));
+  });
+  $("#trigger_test button:last").click(function () {
+    $("#trigger_test button:first").trigger("click");
+    update($("#trigger_test div:last span"));
+  });
 });
 
 function maxopen(event) {
@@ -37,7 +46,12 @@ function maxopen(event) {
   maxwindow.moveTo(0, 0);
   maxwindow.resizeBy(screen.availWidth, screen.availHeight);
 }
-//-------------------
+
 function flash() {
   $("#off_test").show().fadeOut("slow");
+}
+
+function update(j) {
+  var n = parseInt(j.text(), 10);
+  j.text(n + 1);
 }
