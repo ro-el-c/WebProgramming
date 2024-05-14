@@ -85,6 +85,25 @@ $(document).ready(function () {
 
   //-------------- 실습 9 - animate()
   $("#moving_button").on("click", move_box);
+
+  //-------------- 13 - jQuery 실습 - each()
+  $(".accordian").each(function () {
+    var dl = $(this);
+    var alldd = dl.find("dd");
+    var alldt = dl.find("dt");
+    alldd.hide();
+    alldt.css({ cursor: "pointer" });
+
+    alldt.on("click", function () {
+      alldd.hide();
+      $(this).next().show();
+      // var dt = $(this);
+      // var dd = dt.next();
+      // dd.show();
+      alldt.css({ cursor: "pointer" });
+      $(this).css({ cursor: "default" });
+    });
+  });
 });
 
 function maxopen(event) {
