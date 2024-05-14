@@ -79,6 +79,9 @@ $(document).ready(function () {
   //-------------- 실습 8 - 노트 추가
   $("#add_img img").on("click", show_note_form);
   $("#add_note").on("click", push_note);
+  $(window).resize(function () {
+    change_position($(".pop-up"));
+  });
 });
 
 function maxopen(event) {
@@ -114,7 +117,7 @@ function push_note() {
 }
 
 function change_position(obj) {
-  var top = ($(window).height() - $("#note_form").height()) / 2;
-  var left = ($(window).width() - $("#note_form").width()) / 2;
+  var top = ($(window).height() - obj.height()) / 2;
+  var left = ($(window).width() - obj.width()) / 2;
   obj.css({ top: top, left: left });
 }
