@@ -105,7 +105,7 @@ function update(j) {
 function show_note_form() {
   $("#note_form").addClass("pop-up"); //.css({ display: "block" })
   change_position($(".pop-up"));
-  $("#note_form").show();
+  $("#note_form").slideDown("slow");
 }
 function push_note() {
   var noteTitle = $("#note_title").val();
@@ -116,7 +116,7 @@ function push_note() {
     "<p>" + noteTitle + "<br>" + noteDate + "<br>" + noteContent + "</p><br>";
   $("#note").append(str); //append: 기존 내용 유지, 뒤에 추가
 
-  $("#note_form").hide(); //.css({ display: "none" })
+  $("#note_form").fadeOut("slow"); //.css({ display: "none" })
 }
 
 function change_position(obj) {
