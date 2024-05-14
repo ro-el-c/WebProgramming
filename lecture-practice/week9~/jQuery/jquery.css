@@ -131,6 +131,18 @@ div.out p {
   border: 1px solid black;
 }
 
+/* --------------------------------------------------------------- */
+#animation_test {
+  position: relative;
+  height: 100px;
+}
+
+#moving_box {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: blue;
+}
 
 /* --------------------------------------------------------------- */
 /* 내가 추가한 코드 */

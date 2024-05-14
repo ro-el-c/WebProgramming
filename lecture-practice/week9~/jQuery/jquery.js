@@ -82,6 +82,9 @@ $(document).ready(function () {
   $(window).resize(function () {
     change_position($(".pop-up"));
   });
+
+  //-------------- 실습 9 - animate()
+  $("#moving_button").on("click", move_box);
 });
 
 function maxopen(event) {
@@ -120,4 +123,13 @@ function change_position(obj) {
   var top = ($(window).height() - obj.height()) / 2;
   var left = ($(window).width() - obj.width()) / 2;
   obj.css({ top: top, left: left });
+}
+
+function move_box() {
+  $("#animation_test").animate({ height: "+=50px" });
+  $("#moving_box").animate({
+    right: "0px",
+    height: "+=50px",
+    width: "+=50px",
+  });
 }
