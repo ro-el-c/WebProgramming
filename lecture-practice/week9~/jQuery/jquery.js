@@ -96,17 +96,25 @@ function update(j) {
   j.text(n + 1);
 }
 
-
 function show_note_form() {
-  $("#note_form").show(); //.css({ display: "block" })
+  $("#note_form").addClass("pop-up"); //.css({ display: "block" })
+  change_position($(".pop-up"));
+  $("#note_form").show();
 }
 function push_note() {
   var noteTitle = $("#note_title").val();
   var noteDate = $("#note_date").val();
   var noteContent = $("#note_content").val();
 
-  var str = "<p>" + noteTitle + "<br>" + noteDate + "<br>" + noteContent + "</p><br>";
+  var str =
+    "<p>" + noteTitle + "<br>" + noteDate + "<br>" + noteContent + "</p><br>";
   $("#note").append(str); //append: 기존 내용 유지, 뒤에 추가
 
   $("#note_form").hide(); //.css({ display: "none" })
+}
+
+function change_position(obj) {
+  var top = ($(window).height() - $("#note_form").height()) / 2;
+  var left = ($(window).width() - $("#note_form").width()) / 2;
+  obj.css({ top: top, left: left });
 }
