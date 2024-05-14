@@ -70,11 +70,15 @@ $(document).ready(function () {
   //-------------- CSS Style 수정
   var defaultFontSize = $(".main-menu").css("font-size");
   $(".main-menu").mouseover(function () {
-    $(this).css({"font-size": 20, "background": "green"});
+    $(this).css({ "font-size": 20, background: "green" });
   });
   $(".main-menu").mouseout(function () {
-    $(this).css({"font-size": defaultFontSize, "background": "none"});
+    $(this).css({ "font-size": defaultFontSize, background: "none" });
   });
+
+  //-------------- 실습 8 - 노트 추가
+  $("#add_img img").on("click", show_note_form);
+  $("#add_note").on("click", push_note);
 });
 
 function maxopen(event) {
@@ -90,4 +94,19 @@ function flash() {
 function update(j) {
   var n = parseInt(j.text(), 10);
   j.text(n + 1);
+}
+
+
+function show_note_form() {
+  $("#note_form").show(); //.css({ display: "block" })
+}
+function push_note() {
+  var noteTitle = $("#note_title").val();
+  var noteDate = $("#note_date").val();
+  var noteContent = $("#note_content").val();
+
+  var str = "<p>" + noteTitle + "<br>" + noteDate + "<br>" + noteContent + "</p><br>";
+  $("#note").append(str); //append: 기존 내용 유지, 뒤에 추가
+
+  $("#note_form").hide(); //.css({ display: "none" })
 }
