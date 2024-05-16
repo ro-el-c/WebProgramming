@@ -87,7 +87,7 @@ $(document).ready(function () {
   $("#moving_button").on("click", move_box);
 
   //-------------- 13 - jQuery 실습 - each()
-  // $(".accordian").each(function () {
+  // $(".accordion").each(function () {
   //   var dl = $(this);
   //   var alldd = dl.find("dd");
   //   var alldt = dl.find("dt");
@@ -101,7 +101,7 @@ $(document).ready(function () {
   //     $(this).css({ cursor: "default" });
   //   });
   // });
-  $(".accordian").each(function () {
+  $(".accordion").each(function () {
     var dl = $(this);
     var allDt = dl.find("dt");
     var allDd = dl.find("dd");
@@ -113,7 +113,7 @@ $(document).ready(function () {
       dt.removeClass("closed");
       dd.removeClass("closed");
     }
-    
+
     closeAll();
 
     allDt.on("click", function() {
