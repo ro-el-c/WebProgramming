@@ -116,10 +116,40 @@ $(document).ready(function () {
 
     closeAll();
 
-    allDt.on("click", function() {
+    allDt.on("click", function () {
       closeAll();
       open($(this), $(this).next());
-    })
+    });
+  });
+
+  //-------------- slideshow
+  var interval = 3000;
+  $(".slideshow").each(function () {
+    var container = $(this);
+    var timer;
+    function switchImg() {
+      var imgs = container.find("img");
+      var first = imgs.eq(0); // 첫 번째 이미지
+      var second = imgs.eq(1);
+
+      first.appendTo(container).fadeOut(2000); // 마지막에 추가
+      // 새로운 것이 아니라, 기존의 것을 뒤에 append하는 것이기 때문에 copy X
+      // 맨 앞에서 지워지고 뒤에 추가됨
+      second.fadeIn(2000);
+    }
+    
+    function startTimer() {
+      timer = setInterval(switchImg, interval);
+    }
+    function stopTimer() {
+      clearInterval(timer);
+    }
+    //3초에 한 번 이미지 바뀜 / 마우스 hover일 때 멈춤
+    startTimer();
+    container.hover(stopTimer, startTimer);
+    //hover(handler1, handler2);
+    //handler1: 마우스가 위에 있을 때
+    //handler2: 마우스가 위에 있다가 사라졌을 때
   });
 });
 

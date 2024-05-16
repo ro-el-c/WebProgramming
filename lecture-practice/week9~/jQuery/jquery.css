@@ -175,6 +175,26 @@ dd.closed {
 }
 
 /* --------------------------------------------------------------- */
+.slideshow {
+  width: 210px;
+  height: 150px;
+  margin: 10px 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.slideshow img {
+  position:  absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid #dfdfdf;
+}
+
+.slideshow img.alt {
+  display: none;
+}
+
+/* --------------------------------------------------------------- */
 /* 내가 추가한 코드 */
 #imgAlbum {
   object-fit: cover;
