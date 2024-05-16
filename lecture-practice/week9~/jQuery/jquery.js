@@ -87,22 +87,39 @@ $(document).ready(function () {
   $("#moving_button").on("click", move_box);
 
   //-------------- 13 - jQuery 실습 - each()
+  // $(".accordian").each(function () {
+  //   var dl = $(this);
+  //   var alldd = dl.find("dd");
+  //   var alldt = dl.find("dt");
+  //   alldd.hide();
+  //   alldt.css({ cursor: "pointer" });
+
+  //   alldt.on("click", function () {
+  //     alldd.hide();
+  //     $(this).next().show();
+  //     alldt.css({ cursor: "pointer" });
+  //     $(this).css({ cursor: "default" });
+  //   });
+  // });
   $(".accordian").each(function () {
     var dl = $(this);
-    var alldd = dl.find("dd");
-    var alldt = dl.find("dt");
-    alldd.hide();
-    alldt.css({ cursor: "pointer" });
+    var allDt = dl.find("dt");
+    var allDd = dl.find("dd");
+    function closeAll() {
+      allDd.addClass("closed");
+      allDt.addClass("closed");
+    }
+    function open(dt, dd) {
+      dt.removeClass("closed");
+      dd.removeClass("closed");
+    }
+    
+    closeAll();
 
-    alldt.on("click", function () {
-      alldd.hide();
-      $(this).next().show();
-      // var dt = $(this);
-      // var dd = dt.next();
-      // dd.show();
-      alldt.css({ cursor: "pointer" });
-      $(this).css({ cursor: "default" });
-    });
+    allDt.on("click", function() {
+      closeAll();
+      open($(this), $(this).next());
+    })
   });
 });
 
