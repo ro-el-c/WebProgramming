@@ -137,7 +137,7 @@ $(document).ready(function () {
       // 맨 앞에서 지워지고 뒤에 추가됨
       second.fadeIn(2000);
     }
-    
+
     function startTimer() {
       timer = setInterval(switchImg, interval);
     }
@@ -150,6 +150,31 @@ $(document).ready(function () {
     //hover(handler1, handler2);
     //handler1: 마우스가 위에 있을 때
     //handler2: 마우스가 위에 있다가 사라졌을 때
+  });
+
+  //-------------- 웹 서버 파일 불러오기
+  $("#getText").click(function () {
+    $("#textbox").text("글자 입력 테스트");
+
+    var req = $.ajax("data.txt");
+    req.done(function (data, status) {
+      //서버가 주는 data와 응답 상태 status
+      var students = JSON.parse(data); //txt file -> 응답이 문자열 형태 => JS object로 변환 (parse)
+      for (var i = 0; i < students.length; i++) {
+        var str = "<br>" + students[i].name;
+        $("#textbox").append(str);
+      }
+    });
+
+    /*
+    node app.js로 웹 서버를 실행시키지 않고 jquery.html을 크롬에 드래그앤드랍했을 때,
+    위 작업이 성공적으로 수행되지 않는 이유는?
+    
+    -> 드래그앤드랍 이후 주소창을 확인해 보면, 현재 파일의 경로가 출력됨
+    => 그냥 js를 실행한 것과 같으며, 이는 브라우저가 실행시키는 것
+        따라서, 실질적으로 웹서버로부터 데이터를 가져오는 동작이 정상적으로 수행되지 않음
+
+    */
   });
 });
 
