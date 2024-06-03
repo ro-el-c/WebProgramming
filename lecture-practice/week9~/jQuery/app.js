@@ -44,5 +44,7 @@ app.use("/", router);
 
 http.createServer(app).listen(app.get("port"), app.get("host"), () => {
   //Express 서버 시작
-  console.log("Express server running at " + app.get("port") + app.get("host"));
+  console.log(
+    "Express server running at " + app.get("port") + " " + app.get("host")
+  );
 });
