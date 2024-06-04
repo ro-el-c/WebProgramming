@@ -1,4 +1,4 @@
-var imgArray = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"];
+var imgArray = ["imgs/img1.jpg", "imgs/img2.jpg", "imgs/img3.jpg", "imgs/img4.jpg", "imgs/img5.jpg"];
 
 $(document).ready(function () {
   var i = 0;
@@ -44,10 +44,10 @@ $(document).ready(function () {
 
   //-------------- attr(), 이미지 변경
   $("#image").click(function () {
-    if ($("#image").attr("src") == "img1.jpg") {
-      $("#image").attr("src", "img2.jpg");
+    if ($("#image").attr("src") == "imgs/img1.jpg") {
+      $("#image").attr("src", "imgs/img2.jpg");
     } else {
-      $("#image").attr("src", "img1.jpg");
+      $("#image").attr("src", "imgs/img1.jpg");
     }
   });
 
@@ -154,22 +154,63 @@ $(document).ready(function () {
 
   //-------------- 웹 서버 파일 불러오기
   $("#getText").click(function () {
-    $("#textbox").text("글자 입력 테스트");
+    //$("#textbox").text("글자 입력 테스트");
 
-    var req = $.ajax("data.txt");
-    req.done(function (data, status) {
-      //서버가 주는 data와 응답 상태 status
-      var students = JSON.parse(data); //txt file -> 응답이 문자열 형태 => JS object로 변환 (parse)
-      for (var i = 0; i < students.length; i++) {
-        var str = "<br>" + students[i].name;
-        $("#textbox").append(str);
+    var tb = $("<table/>");
+    var row = $("<tr/>")
+    .append($("<th/>").text("이름"),
+      $("<th/>").text("아이디"),
+      $("<th/>").text("학과"), 
+      $("<th/>").text("수강 과목"));
+    tb.append(row);
+
+    //txt 파일을 json 형태로 불러오는 방법
+    var req = $.ajax({
+      url: "data.txt",
+      dataType: "json"
+    });
+    req.done(function(data, status) {
+      for (var i = 0; i < data.length; i++) {
+        var student = data[i];
+
+        var classes = student.class;
+        var classStr = classes.join(", ");
+
+        var row = $("<tr/>")
+        .append($("<td/>").text(student.name), 
+          $("<td/>").text(student.id), 
+          $("<td/>").text(student.department), 
+          $("<td/>").text(classStr));
+
+        tb.append(row);
+        
+        //var str = "<br>" + data[i].name;
+        //$("#textbox").append(str);
       }
     });
+
+    $("#textbox").html(tb);
+
+    /*
+    txt, json 파일을 각각의 형태로 불러오는 방법
+
+    var req = $.ajax("data.json");
+    req.done(function (data, status) {
+      //서버가 주는 data와 응답 상태 status
+      //var students = JSON.parse(data); //txt file -> 응답이 문자열 형태 => JS object로 변환 (parse)
+      
+      //.json 파일을 불러오면 데이터 자체가 json 형식이므로 parse 필요 X
+      for (var i = 0; i < data.length; i++) {
+        var str = "<br>" + data[i].name;
+        $("#textbox").append(str);
+      }
+    });*/
+
 
     /*
     node app.js로 웹 서버를 실행시키지 않고 jquery.html을 크롬에 드래그앤드랍했을 때,
     위 작업이 성공적으로 수행되지 않는 이유는?
-    
+   
     -> 드래그앤드랍 이후 주소창을 확인해 보면, 현재 파일의 경로가 출력됨
     => 그냥 js를 실행한 것과 같으며, 이는 브라우저가 실행시키는 것
         따라서, 실질적으로 웹서버로부터 데이터를 가져오는 동작이 정상적으로 수행되지 않음
