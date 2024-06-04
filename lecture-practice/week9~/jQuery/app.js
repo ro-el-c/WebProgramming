@@ -4,8 +4,7 @@ npm install express --save
 npm install serve-static --save
 node app.js
 */
-var express = require("express"),
-  http = require("http");
+var express = require("express"), http = require("http");
 var static = require("serve-static");
 var app = express(); //익스프레스 객체 생성
 var router = express.Router();
@@ -48,3 +47,6 @@ http.createServer(app).listen(app.get("port"), app.get("host"), () => {
     "Express server running at " + app.get("port") + " " + app.get("host")
   );
 });
+
+//app.js에 수정이 있을 때만 서버 재실행
+//jquery.js만 수정된 경우 재실행하지 않아도 됨
