@@ -1,4 +1,10 @@
-var imgArray = ["imgs/img1.jpg", "imgs/img2.jpg", "imgs/img3.jpg", "imgs/img4.jpg", "imgs/img5.jpg"];
+var imgArray = [
+  "imgs/img1.jpg",
+  "imgs/img2.jpg",
+  "imgs/img3.jpg",
+  "imgs/img4.jpg",
+  "imgs/img5.jpg",
+];
 
 $(document).ready(function () {
   var i = 0;
@@ -157,43 +163,42 @@ $(document).ready(function () {
     //$("#textbox").text("글자 입력 테스트");
 
     var tb = $("<table/>");
-    var row = $("<tr/>")
-    .append($("<th/>").text("이름"),
+    var row = $("<tr/>").append(
+      $("<th/>").text("이름"),
       $("<th/>").text("아이디"),
-      $("<th/>").text("학과"), 
-      $("<th/>").text("수강 과목"));
+      $("<th/>").text("학과"),
+      $("<th/>").text("수강 과목")
+    );
     tb.append(row);
 
     //txt 파일을 json 형태로 불러오는 방법
     var req = $.ajax({
       url: "data.txt",
-      dataType: "json"
+      dataType: "json",
     });
-    req.done(function(data, status) {
+    req.done(function (data, status) {
       for (var i = 0; i < data.length; i++) {
         var student = data[i];
 
         var classes = student.class;
         var classStr = classes.join(", ");
 
-        var row = $("<tr/>")
-        .append($("<td/>").text(student.name), 
-          $("<td/>").text(student.id), 
-          $("<td/>").text(student.department), 
-          $("<td/>").text(classStr));
+        var row = $("<tr/>").append(
+          $("<td/>").text(student.name),
+          $("<td/>").text(student.id),
+          $("<td/>").text(student.department),
+          $("<td/>").text(classStr)
+        );
 
         tb.append(row);
-        
+
         //var str = "<br>" + data[i].name;
         //$("#textbox").append(str);
       }
     });
 
     $("#textbox").html(tb);
-
-    /*
-    txt, json 파일을 각각의 형태로 불러오는 방법
-
+    /* txt, json 파일을 각각의 형태로 불러오는 방법
     var req = $.ajax("data.json");
     req.done(function (data, status) {
       //서버가 주는 data와 응답 상태 status
@@ -205,17 +210,50 @@ $(document).ready(function () {
         $("#textbox").append(str);
       }
     });*/
-
-
+    
     /*
     node app.js로 웹 서버를 실행시키지 않고 jquery.html을 크롬에 드래그앤드랍했을 때,
     위 작업이 성공적으로 수행되지 않는 이유는?
-   
+    
     -> 드래그앤드랍 이후 주소창을 확인해 보면, 현재 파일의 경로가 출력됨
     => 그냥 js를 실행한 것과 같으며, 이는 브라우저가 실행시키는 것
         따라서, 실질적으로 웹서버로부터 데이터를 가져오는 동작이 정상적으로 수행되지 않음
-
     */
+  });
+
+  var req = $.ajax({
+    url: "/rss",
+    dataType: "xml",
+  });
+  //dataType을 명시하지 않으면 string
+  //dataType을 명시하지 않은 경우, .done 에서 $.parseXML(data) 작업 거친 후 사용
+  req.done(function (data) {
+    var items = $(data).find("item");
+    if (items.length > 0) {
+      items = items.slice(0, 5);
+      var uTag = $("<ul />");
+      items.each(function () {
+        var item = $(this);
+        var lk = item.find("link").text();
+        var title = item.find("title").text();
+
+        var aTag = $("<a />")
+          .attr({
+            href: lk,
+            target: "_blank",
+          })
+          .text(title);
+        var liTag = $("<li />").append(aTag);
+        //또는 $("<li />").html(aTag);
+
+        uTag.append(liTag);
+      });
+      $("#news").html(uTag);
+      //append 사용시 뒤에 덧붙이기 때문에 갱신되는 것이 아닌 내용 추가가 됨
+    }
+  });
+  req.fail(function (jqXHR, textStatus) {
+    alert("failed: " + textStatus);
   });
 });
 
