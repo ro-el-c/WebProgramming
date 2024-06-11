@@ -4,7 +4,8 @@ npm install express --save
 npm install serve-static --save
 node app.js
 */
-var express = require("express"), http = require("http");
+var express = require("express"),
+  http = require("http");
 var static = require("serve-static");
 var app = express(); //익스프레스 객체 생성
 var router = express.Router();
@@ -37,6 +38,24 @@ router.route("/").get(function (req, res) {
 
 router.route("/routetest").get(function (req, res) {
   res.redirect("http://www.google.com");
+});
+
+router.route("/rss").get(function (req, res) {
+  console.log("rss data requested");
+  var feed = "http://fs.jtbc.co.kr/RSS/sports.xml";
+  http.get(feed, function (httpres) {
+    var rss_res = "";
+    httpres.on("data", function (chunk) {
+      //B가 어떤 data를 보내면 data 전송이라는 이벤트 발생
+      rss_res += chunk;
+    });
+    httpres.on("end", function () {
+      //data 전송 종료 이벤트
+      res.send(rss_res); //res: A가 A.html(자신의 웹 서버 안에 있는 html)에 보내는 응답
+      console.log("rss response completed");
+      res.end();
+    });
+  });
 });
 
 app.use("/", router);
